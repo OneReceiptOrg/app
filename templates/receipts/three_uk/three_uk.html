@@ -1,0 +1,201 @@
+<html lang="en">
+
+<head>
+    <base href="https://receiptly.cc/static/receipts/threeuk/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/threeuk/three/static/fonts/yuditjb.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+        }
+
+        .three-top-part {
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .three-top-part div {
+            height: 37px;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: 2000px;
+            outline: none;
+        }
+
+        td.label {
+            text-align: left;
+        }
+
+        td.value {
+            text-align: right;
+        }
+
+        .separator {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .product-info {
+            display: flex;
+            padding-top: 53px;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        .vat-section {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .product-line {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .separator-icon {
+            display: block;
+            width: 95%;
+            max-width: 600px;
+            margin: 10px auto;
+            height: auto;
+        }
+
+        .qr-icon {
+            display: block;
+            margin: 10px auto;
+            height: auto;
+        }
+
+        .info-icon {
+            display: block;
+            margin: 20px auto;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="container" contenteditable="true">
+        <div id="receipt3" class="three-top-part" contenteditable="true">
+            <div style="height: 150px; padding-top: 0px;" contenteditable="false">
+                <img src="https://receiptly.cc/static/receipts/threeuk/three/static/images/brand_icons/three.png"
+                    style="height: 200%;">
+            </div>
+            <div style="padding-top: 80px; height: 429px; text-align: left;">
+                <div style="font-size: 35px;"><strong>{{BRAND_NAME}}</strong></div>
+                <div style="height: 25px;"></div>
+                <div style="text-align: center;">
+                </div>
+                <div style="line-height: 0;"><img
+                        src="https://receiptly.cc/static/receipts/threeuk/three/static/images/brand_icons/seperator.png">
+                    <div style="line-height: 3;">{{BRANCH_NAME}}</div>
+                    <div style="line-height: 2;">{{STORE_ADDRESS}}</div>
+                    <div style="line-height: 1;">{{STORE_CITY}}</div>
+                    <div style="line-height: 0;">{{STORE_PHONE}}</div>
+                    <img
+                        src="https://receiptly.cc/static/receipts/threeuk/three/static/images/brand_icons/seperator.png">
+                </div>
+                <div style="height: 150px;"></div>
+                <div
+                    style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="flex-grow: 1; text-align: left;"> {{PRODUCT_NAME}} </div>
+                    <div style="text-align: right;">{{PRODUCT_PRICE}}</div>
+                </div>
+                <div style="height: 30px;"></div>
+                <div
+                    style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="flex-grow: 1; text-align: left;"> IMEI: {{PRODUCT_IMEI}}</div>
+                    <div style="height: 20px;"></div>
+                </div>
+                <div style="height: 20px;"></div>
+                <img src="https://receiptly.cc/static/receipts/threeuk/three/static/images/brand_icons/qr.png"
+                    style="display: block; margin: 0 auto;">
+                <div>Invoice Number:</div>
+                <div>{{INVOICE_NUMBER}}</div>
+                <div style="height: 20px;"></div>
+                <div
+                    style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="flex-grow: 1; text-align: left; line-height: 1;"> You were served today by</div>
+                    <div style="text-align: right; line-height: 1;">{{SERVED_BY}}</div>
+                </div>
+                <div>Please Retain For Your Records</div>
+                <div>VAT Number - {{VAT_NUMBER}}</div>
+                <div style="height: 26px;"></div>
+                <div style="height: 40px;"></div>
+                <div style="text-align: center; margin: 0 auto;">
+                    <div style="display: flex; justify-content: center; line-height: 1.5;">
+                        <div style="width: 130px; text-align: center; font-weight: bold;">Date</div>
+                        <div style="width: 130px; text-align: center; font-weight: bold;">Time</div>
+                        <div style="width: 130px; text-align: center; font-weight: bold;">Store</div>
+                        <div style="width: 130px; text-align: center; font-weight: bold;">Term</div>
+                        <div style="width: 130px; text-align: center; font-weight: bold;">Tran</div>
+                    </div>
+                    <div style="display: flex; justify-content: center; line-height: 1.5;">
+                        <div style="width: 130px; text-align: center;"><strong>02/08/2024</strong></div>
+                        <div style="width: 130px; text-align: center;"><strong>15:27</strong></div>
+                        <div style="width: 130px; text-align: center;"><strong>00001</strong></div>
+                        <div style="width: 130px; text-align: center;"><strong>0001</strong></div>
+                        <div style="width: 130px; text-align: center;"><strong>00001</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- FORM: -->
+<!-- Products
+{{PRODUCT_NAME}}
+Price
+{{PRODUCT_PRICE}}
+Tax
+{{TAX_AMOUNT}}
+Date
+{{TRANSACTION_DATE}}
+Order Number
+{{INVOICE_NUMBER}}
+Store Name
+{{BRAND_NAME}}
+Store Address
+{{STORE_ADDRESS}}
+Store City
+{{STORE_CITY}}
+Store Phone
+{{STORE_PHONE}}
+Transaction Number
+{{TRANSACTION_CODE}}
+Sales Associate
+{{SERVED_BY}}
+Customer Name
+{{CUSTOMER_NAME}}
+Product Reference
+{{PRODUCT_IMEI}}
+-->

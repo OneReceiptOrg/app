@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+    <base href="https://receiptly.cc/static/receipts/sephora/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/sephora/sephora/static/fonts/Vazir.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 600px;
+            /* Same width as the original box */
+            padding: 20px;
+            /* Same padding as the original box */
+            background: white;
+            /* Match the background */
+            position: relative;
+            overflow: hidden;
+            /* Prevent images from overflowing */
+        }
+
+        .sephora-top-part {
+            font-size: 25px;
+            font-weight: normal;
+            background: white;
+            border: none;
+            outline: none;
+        }
+
+        .sephora-top-part div {
+            height: 37px;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: auto;
+            background: white;
+            border: none;
+            outline: none;
+        }
+
+        td.label {
+            text-align: left;
+        }
+
+        td.value {
+            text-align: right;
+        }
+
+        .separator {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .product-info {
+            display: flex;
+            padding-top: 53px;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        .vat-section {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .product-line {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Remove focus outline */
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+
+        /* Constrain images to container width */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* Center images */
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="container">
+        <div id="receipt3" class="sephora-top-part" contenteditable="true">
+            <div style="height: 100px; padding-top: 40px;" contenteditable="false">
+                <img src="https://receiptly.cc/static/receipts/sephora/sephora/static/images/brand_icons/sephora.png"
+                    style="height: 200%;">
+            </div>
+            <div style="height: 110px;"></div>
+            <div>Sephora</div>
+            <div>5 Times Square</div>
+            <div>New York, NY 10036</div>
+            <div style="height: 15px;"></div>
+            <div style="text-align: left;">ITEM QTY PRICE Amount</div>
+            <hr style="margin-top: 10px;">
+            <div style="text-align: left; margin-top: -11px;">Dior Backstage Foundation</div>
+            <div style="text-align: left;">2775955 1 40.00 40.00</div>
+            <div style="height: 20px;"></div>
+            <div> SUBTOTAL 40.00</div>
+            <div style="text-align: left;"> FL STATE TAX 7% 3.60</div>
+            <img style="position: relative; margin-top: -4px"
+                src="https://receiptly.cc/static/receipts/sephora/sephora/static/images/brand_icons/seperator.png">
+            <div style="height: 15px;"></div>
+            <div style="text-align: left; margin-top: -5px;"> TOTAL AMT 43.60</div>
+            <img style="position: relative; margin-top: -4px;"
+                src="https://receiptly.cc/static/receipts/sephora/sephora/static/images/brand_icons/seperator.png">
+            <div style="height: 10px;"></div>
+            <div style="text-align: left;">Visa Purchase 43.60</div>
+            <div style="height: 30px;"></div>
+            <div style="text-align: left;"> Card Number : ***********5241</div>
+            <div style="text-align: left;"> Card Type : Visa</div>
+            <div style="text-align: left;"> Card Entry : CHIP</div>
+            <div style="text-align: left;"> Trans Type : PURCHASE</div>
+            <div style="text-align: left;"> Amount : $43.60</div>
+            <div style="height: 30px;"></div>
+            <div style="text-align: left;"> Auth # : 076135</div>
+            <div style="text-align: left;"> Sequence # : 092351</div>
+            <div style="text-align: left;"> Reference # : 00006317</div>
+            <div style="text-align: left;"> Term Id : 712</div>
+            <div style="text-align: left;"> Date : 03/13/2024 15:45</div>
+            <div style="text-align: left;"> Time : 12:34:51</div>
+            <div style="height: 10px;"></div>
+            <div>APPROVED</div>
+            <div style="height: 20px;"></div>
+            <img src="https://receiptly.cc/static/receipts/sephora/sephora/static/images/brand_icons/end.png">
+            <div>***************************************</div>
+            <img src="https://receiptly.cc/static/receipts/sephora/sephora/static/images/brand_icons/qr.png">
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- Products
+Dior Backstage Foundation
+Price
+40.00
+Tax
+3.60
+Date
+03/13/2024 15:45
+Order Number
+ORD-266656
+Store Name
+Sephora
+Store Address
+5 Times Square
+Store City
+New York, NY 10036
+Store Phone
+(212) 944-0504
+Transaction Number
+SEP-24031300789
+Cashier ID
+SP45678
+Customer Name
+Rachel Green
+Beauty Insider Status
+VIB Rouge
+Product SKU
+P439089
+Card Last 4
+5241 -->

@@ -1,0 +1,831 @@
+<html>
+
+<head>
+    <style>
+        @charset "UTF-8";
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video,
+        input,
+        textarea {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section,
+        time {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+            color: black;
+            background: white;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* meyerweb css reset end */
+
+        textarea:focus,
+        input:focus {
+            outline: 0;
+        }
+
+        input {
+            border-width: 0;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .group:before,
+        .group:after {
+            content: " ";
+            display: table;
+        }
+
+        .group:after {
+            clear: both;
+        }
+
+        .group {
+            zoom: 1;
+            /* ie 6/7 */
+        }
+
+        embed,
+        img,
+        object,
+        video {
+            max-width: 100%;
+        }
+
+        sup {
+            font-size: 58.3%;
+            vertical-align: text-top;
+        }
+
+        sub {
+            font-size: 58.3%;
+            vertical-align: text-bottom;
+        }
+
+        .no-space-between-inline-blocks {
+            *letter-spacing: normal;
+            /*reset IE < 8*/
+            letter-spacing: -0.31em;
+            /*webkit*/
+            word-spacing: -0.43em;
+            /*IE < 8 && gecko*/
+        }
+
+        /*restore spacing on inner elements*/
+        .no-space-between-inline-blocks>* {
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+
+        .displace {
+            left: -5000px;
+            position: absolute;
+        }
+
+        html {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            color: #0d1011;
+            font-family: Biryani, sans-serif;
+            font-size: 1.492967rem;
+            /* 23.89px / 16px = 1.493125rem */
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: -0.025em;
+            text-decoration: none;
+        }
+
+        .global_container_ {
+            float: none;
+            height: 2303px;
+            margin: 0 auto;
+            min-height: 2303px;
+            position: relative;
+            width: 728px;
+            background: #ffffff;
+        }
+
+        .sloi-5 {
+            left: 50%;
+            position: absolute;
+            top: 1348px;
+            margin-left: -280px;
+        }
+
+        .text {
+            left: 50%;
+            position: absolute;
+            top: 393px;
+            font-size: 1.505263rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: 0;
+            line-height: 30px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-2 {
+            left: 50%;
+            position: absolute;
+            top: 518px;
+            font-size: 1.505263rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: 0;
+            line-height: 24px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-3 {
+            left: 50%;
+            position: absolute;
+            top: 587px;
+            font-size: 1.505109rem;
+            /* 24.08px / 16px = 1.505rem */
+            line-height: 25px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-4 {
+            left: 50%;
+            position: absolute;
+            top: 620px;
+            font-size: 1.505109rem;
+            /* 24.08px / 16px = 1.505rem */
+            line-height: 27px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-5 {
+            left: 50%;
+            position: absolute;
+            top: 820px;
+            font-size: 1.505109rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: -0.05em;
+            line-height: 26px;
+            text-align: center;
+            margin-left: -20px;
+        }
+
+        .total {
+            left: 50%;
+            position: absolute;
+            top: 917px;
+            color: #151515;
+            font-size: 1.505109rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: -0.05em;
+            line-height: 24px;
+            text-align: center;
+            margin-left: 29px;
+        }
+
+        .text-6 {
+            left: 50%;
+            position: absolute;
+            top: 975px;
+            color: #151515;
+            font-size: 1.502691rem;
+            /* 24.04px / 16px = 1.5025rem */
+            letter-spacing: -0.05em;
+            line-height: 27px;
+            text-align: center;
+            margin-left: -103px;
+        }
+
+        .text-7 {
+            left: 50%;
+            position: absolute;
+            top: 1032px;
+            color: #151515;
+            line-height: 26px;
+            text-align: center;
+            margin-left: -230px;
+        }
+
+        .text-8 {
+            left: 50%;
+            position: absolute;
+            top: 1594px;
+            color: #151515;
+            letter-spacing: -0.05em;
+            line-height: 31px;
+            text-align: center;
+            margin-left: -300px;
+        }
+
+        .text-9 {
+            left: 50%;
+            position: absolute;
+            top: 1637px;
+            line-height: 27px;
+            text-align: center;
+            margin-left: -299px;
+        }
+
+        .text-10 {
+            left: 50%;
+            position: absolute;
+            top: 1674px;
+            line-height: 28px;
+            text-align: center;
+            margin-left: -301px;
+        }
+
+        .text-11 {
+            left: 50%;
+            position: absolute;
+            top: 1718px;
+            line-height: 25px;
+            text-align: center;
+            margin-left: -301px;
+        }
+
+        .text-12 {
+            left: 50%;
+            position: absolute;
+            top: 1755px;
+            line-height: 27px;
+            text-align: center;
+            margin-left: -302px;
+        }
+
+        .text-13 {
+            left: 50%;
+            position: absolute;
+            top: 1795px;
+            line-height: 25px;
+            text-align: center;
+            margin-left: -300px;
+        }
+
+        .text-14 {
+            left: 50%;
+            position: absolute;
+            top: 1828px;
+            line-height: 30px;
+            text-align: center;
+            margin-left: -301px;
+        }
+
+        .text-15 {
+            left: 50%;
+            position: absolute;
+            top: 1870px;
+            line-height: 28px;
+            text-align: center;
+            margin-left: -300px;
+        }
+
+        .text-16 {
+            left: 50%;
+            position: absolute;
+            top: 1906px;
+            line-height: 27px;
+            text-align: center;
+            margin-left: -302px;
+        }
+
+        .text-17 {
+            left: 50%;
+            position: absolute;
+            top: 1940px;
+            line-height: 25px;
+            text-align: center;
+            margin-left: -302px;
+        }
+
+        .nocvm {
+            left: 50%;
+            position: absolute;
+            top: 1972px;
+            color: #151515;
+            line-height: 25px;
+            text-align: center;
+            margin-left: -300px;
+        }
+
+        .text-18 {
+            left: 50%;
+            position: absolute;
+            top: 2125px;
+            width: 468px;
+            font-size: 1.5625rem;
+            /* 25px / 16px = 1.5625rem */
+            letter-spacing: -0.028em;
+            line-height: 1.2;
+            margin-left: -206px;
+        }
+
+        .text-19 {
+            left: 50%;
+            position: absolute;
+            top: 2189px;
+            width: 507px;
+            font-size: 1.492188rem;
+            /* 23.88px / 16px = 1.4925rem */
+            letter-spacing: -0.028em;
+            line-height: 1.2;
+            text-align: center;
+            margin-left: -263px;
+        }
+
+        .text-20 {
+            left: 50%;
+            position: absolute;
+            top: 1599px;
+            line-height: 29px;
+            text-align: center;
+            margin-left: -25px;
+        }
+
+        .text-21 {
+            left: 50%;
+            position: absolute;
+            top: 1068px;
+            font-size: 1.459612rem;
+            /* 23.35px / 16px = 1.459375rem */
+            line-height: 26px;
+            text-align: center;
+            margin-left: -55px;
+        }
+
+        .text-22 {
+            left: 50%;
+            position: absolute;
+            top: 1136px;
+            font-size: 1.574342rem;
+            /* 25.19px / 16px = 1.574375rem */
+            letter-spacing: -0.05em;
+            line-height: 27px;
+            text-align: center;
+            margin-left: 16px;
+        }
+
+        .text-23 {
+            left: 50%;
+            position: absolute;
+            top: 1102px;
+            font-size: 1.565864rem;
+            /* 25.05px / 16px = 1.565625rem */
+            line-height: 26px;
+            text-align: center;
+            margin-left: -8px;
+        }
+
+        .text-24 {
+            left: 50%;
+            position: absolute;
+            top: 865px;
+            font-size: 1.505109rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: -0.075em;
+            line-height: 24px;
+            text-align: center;
+            margin-left: -35px;
+        }
+
+        .text-25 {
+            left: 50%;
+            position: absolute;
+            top: 518px;
+            font-size: 1.505263rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: 0.025em;
+            line-height: 26px;
+            text-align: center;
+            margin-left: 210px;
+        }
+
+        .text-26 {
+            left: 50%;
+            position: absolute;
+            top: 821px;
+            font-size: 1.505263rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: 0.025em;
+            line-height: 26px;
+            text-align: center;
+            margin-left: 212px;
+        }
+
+        .text-27 {
+            left: 50%;
+            position: absolute;
+            top: 917px;
+            font-size: 1.505263rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: 0.025em;
+            line-height: 26px;
+            text-align: center;
+            margin-left: 196px;
+        }
+
+        .text-28 {
+            left: 50%;
+            position: absolute;
+            top: 1035px;
+            font-size: 1.466215rem;
+            /* 23.46px / 16px = 1.46625rem */
+            letter-spacing: -0.01em;
+            line-height: 24px;
+            text-align: center;
+            margin-left: 209px;
+        }
+
+        .text-29 {
+            left: 50%;
+            position: absolute;
+            top: 1425px;
+            font-size: 1.306662rem;
+            /* 20.91px / 16px = 1.306875rem */
+            letter-spacing: 0.25em;
+            line-height: 23px;
+            text-align: center;
+            margin-left: -273px;
+        }
+
+        .text-30 {
+            left: 50%;
+            position: absolute;
+            top: 864px;
+            font-size: 1.505263rem;
+            /* 24.08px / 16px = 1.505rem */
+            letter-spacing: 0.025em;
+            line-height: 26px;
+            text-align: center;
+            margin-left: 222px;
+        }
+
+        .sloi-3 {
+            left: 50%;
+            position: absolute;
+            top: 484px;
+            margin-left: -308px;
+        }
+
+        .sloi-4 {
+            left: 50%;
+            position: absolute;
+            top: 769px;
+            margin-left: -304px;
+        }
+
+        .sloi-6 {
+            left: 50%;
+            position: absolute;
+            top: 1299px;
+            margin-left: -304px;
+        }
+
+        .sloi-7 {
+            left: 50%;
+            position: absolute;
+            top: 1553px;
+            margin-left: -304px;
+        }
+
+        .sloi-2 {
+            left: 50%;
+            position: absolute;
+            top: 369px;
+            margin-left: -303px;
+        }
+
+        .header {
+            height: 70px;
+            left: 50%;
+            position: absolute;
+            top: 35px;
+            width: 57px;
+            background: url(/static/receipts/apple/images/sloi_1.png) no-repeat;
+            margin-left: -308px;
+        }
+
+        .text-31 {
+            left: 50%;
+            position: absolute;
+            top: 120px;
+            color: #000000;
+            font-family: Roboto, sans-serif;
+            font-size: 1.548846rem;
+            /* 24.78px / 16px = 1.54875rem */
+            font-weight: bold;
+            letter-spacing: -0.005em;
+            line-height: 28px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-32 {
+            left: 50%;
+            position: absolute;
+            top: 165px;
+            font-size: 1.488719rem;
+            /* 23.82px / 16px = 1.48875rem */
+            letter-spacing: -0.01em;
+            line-height: 25px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-33 {
+            left: 50%;
+            position: absolute;
+            top: 196px;
+            font-size: 1.488719rem;
+            /* 23.82px / 16px = 1.48875rem */
+            letter-spacing: 0;
+            line-height: 29px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-34 {
+            left: 50%;
+            position: absolute;
+            top: 234px;
+            font-size: 1.555581rem;
+            /* 24.89px / 16px = 1.555625rem */
+            letter-spacing: -0.07em;
+            line-height: 31px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-35 {
+            left: 50%;
+            position: absolute;
+            top: 273px;
+            font-size: 1.555581rem;
+            /* 24.89px / 16px = 1.555625rem */
+            letter-spacing: -0.01em;
+            line-height: 25px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-36 {
+            left: 50%;
+            position: absolute;
+            top: 308px;
+            font-size: 1.555581rem;
+            /* 24.89px / 16px = 1.555625rem */
+            letter-spacing: -0.072em;
+            line-height: 30px;
+            text-align: center;
+            margin-left: -309px;
+        }
+
+        .text-style {
+            font-size: 1.492188rem;
+            /* 23.88px / 16px = 1.4925rem */
+        }
+
+        .text-style-2 {
+            letter-spacing: 0.025em;
+        }
+    </style>
+
+    <base href="https://receiptly.cc/static/receipts/apple/">
+    <title>apple tmeplate</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Your site's description should be here">
+    <meta name="keywords" content="Your site's keywords should be here">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/apple/style.css">
+    <!--[if IE 6]>
+        <style type="text/css">
+            * html .group {
+                height: 1%;
+            }
+        </style>
+      <![endif]-->
+    <!--[if IE 7]>
+        <style type="text/css">
+            *:first-child+html .group {
+                min-height: 1px;
+            }
+        </style>
+      <![endif]-->
+    <!--[if lt IE 9]> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> 
+      <![endif]-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Biryani:200,300,regular,600,700,800,900&amp;subset=devanagari,latin,latin-ext">
+</head>
+
+<body class="">
+    <div class="global_container_">
+        <img class="sloi-5" src="/static/receipts/apple/images/sloi_5.jpg" alt="" width="561" height="66">
+        <p class="text">04/12/2025, 10:04 PM</p>
+        <p class="text-2">AirPods (2nd Generation)</p>
+        <p class="text-3">PartNumber:MV7N2AM/A</p>
+        <p class="text-4">Return Date:Apr 26, 2025</p>
+        <p class="text-5">Sub-Total</p>
+        <p class="total">Total</p>
+        <p class="text-6">Payment Method</p>
+        <p class="text-7">Amount Paid ViaCHASE VISA</p>
+        <p class="text-8">Please debit my account</p>
+        <p class="text-9">Card Number: .....3087</p>
+        <p class="text-10">Date/Time: 2024/01/13 &nbsp;14:43:16</p>
+        <p class="text-11">Application ID: A00000000031010</p>
+        <p class="text-12">Application PAN Sequence Number: 01</p>
+        <p class="text-13">Device d: 0000</p>
+        <p class="text-14">Card Type: Credit</p>
+        <p class="text-15">Preferred Name: CHASE VISA</p>
+        <p class="text-16">TVR: 0000000000000</p>
+        <p class="text-17">TSI:0000</p>
+        <p class="nocvm">NoCVM</p>
+        <p class="text-18"><span
+                class="text-style">https://www.apple.com/legal/sa</span>les-support/sales.policies/retail_us.html</p>
+        <p class="text-19">Learn how to set up your product and transfer your data from home at support.apple.com</p>
+        <p class="text-20">.....3123 &nbsp;by &nbsp;141.28</p>
+        <p class="text-21">(Contactless)</p>
+        <p class="text-22">02192</p>
+        <p class="text-23"><span class="text-style-2">....</span> 3123</p>
+        <p class="text-24">Tax@9.04%</p>
+        <p class="text-25">129.95</p>
+        <p class="text-26">129.95</p>
+        <p class="text-27">141.28</p>
+        <p class="text-28">141.28</p>
+        <p class="text-29">2 0 2 4 0 1 1 3 B 1 3 2 5 0 2 7 0 1 9 *</p>
+        <p class="text-30">12.00</p>
+        <img class="sloi-3" src="/static/receipts/apple/images/sloi_3.jpg" alt="" width="613" height="18">
+        <img class="sloi-4" src="/static/receipts/apple/images/sloi_4.jpg" alt="" width="613" height="18">
+        <img class="sloi-6" src="/static/receipts/apple/images/sloi_6.jpg" alt="" width="613" height="18">
+        <img class="sloi-7" src="/static/receipts/apple/images/sloi_7.jpg" alt="" width="613" height="18">
+        <img class="sloi-2" src="/static/receipts/apple/images/sloi_2.jpg" alt="" width="608" height="11">
+        <header class="header"></header>
+        <p class="text-31">Apple Downtown Brooklyn</p>
+        <p class="text-32">123 Flatbush Ave</p>
+        <p class="text-33">Brooklyn, NY 11217</p>
+        <p class="text-34">downtownbrooklym@apple.com</p>
+        <p class="text-35">720-479.9451</p>
+        <p class="text-36">www.apple.com/retail/downtownbrooklyn/</p>
+    </div>
+
+</body>
+
+</html>

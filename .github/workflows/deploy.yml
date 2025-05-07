@@ -1,0 +1,177 @@
+name: Deploy to DigitalOcean VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build Next.js app
+        run: bun run build
+        env:
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+          DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}
+          DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET }}
+          DISCORD_REDIRECT_URI: ${{ secrets.DISCORD_REDIRECT_URI }}
+          REQUIRED_GUILD_ID: ${{ secrets.REQUIRED_GUILD_ID }}
+          REQUIRED_ROLE_ID: ${{ secrets.REQUIRED_ROLE_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+
+      - name: Configure SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Ensure Deployment Directory Exists
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "Ensuring deployment directory /var/www/onereceipt-app exists..."
+            sudo mkdir -p /var/www/onereceipt-app
+            sudo chown -R ${{ secrets.SSH_USER }}:${{ secrets.SSH_USER }} /var/www/onereceipt-app
+            sudo chmod -R 755 /var/www/onereceipt-app
+
+      - name: Deploy files via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='.env*' \
+            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/onereceipt-app/
+
+      - name: Setup Server, Create .env file, and Restart App
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # --- Server Setup (Requires passwordless sudo for the SSH user) ---
+            # Ensure prerequisites are present, including Caddy & Puppeteer dependencies
+            sudo apt-get update -y && sudo apt-get install -y \
+              curl \
+              unzip \
+              wget \
+              apt-transport-https \
+              debian-keyring \
+              debian-archive-keyring \
+              libnss3 \
+              libatk1.0-0 \
+              libatk-bridge2.0-0 \
+              libcups2 \
+              libdbus-1-3 \
+              libgtk-3-0 \
+              libxss1 \
+              libasound2 \
+              libgbm-dev \
+              redis-server
+
+            # Ensure Redis is running and enabled
+            echo "Ensuring Redis service is running and enabled..."
+            sudo systemctl enable redis-server
+            sudo systemctl start redis-server
+
+            # Install Caddy using official repository
+            echo "Checking/Installing Caddy..."
+            if ! command -v caddy &> /dev/null; then
+              sudo rm -f /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+              curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+              curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+              sudo apt-get update -y
+              sudo apt-get install -y caddy
+            else
+              echo "Caddy already installed."
+            fi
+
+            NODE_MAJOR_VERSION=$(node -v 2>/dev/null | sed -E 's/v([0-9]+).*/\1/')
+            if [ "$NODE_MAJOR_VERSION" -lt 20 ]; then
+              echo "Node.js not found or version less than 20. Installing Node.js 20.x..."
+              curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+              sudo apt-get install -y nodejs
+            else
+              echo "Node.js version 20 or higher already installed."
+            fi
+
+            if ! command -v bun &> /dev/null; then
+              echo "Installing Bun..."
+              curl -fsSL https://bun.sh/install | bash
+              export BUN_INSTALL="$HOME/.bun"
+              export PATH="$BUN_INSTALL/bin:$PATH"
+              echo 'export BUN_INSTALL="$HOME/.bun"' >> ~/.bashrc
+              echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> ~/.bashrc
+            else
+              echo "Bun already installed."
+              export BUN_INSTALL="$HOME/.bun"
+              export PATH="$BUN_INSTALL/bin:$PATH"
+            fi
+
+            if ! command -v pm2 &> /dev/null; then
+              echo "Installing PM2 globally with Bun..."
+              bun add -g pm2
+            else
+              echo "PM2 already installed."
+            fi
+
+            echo "Configuring Firewall..."
+            sudo ufw allow 80/tcp
+            sudo ufw allow 443/tcp
+
+            cd /var/www/onereceipt-app
+
+            # Move Caddyfile from repository to /etc/caddy/
+            echo "Moving Caddyfile to /etc/caddy/..."
+            if [ -f config/Caddyfile ]; then
+              sudo mv config/Caddyfile /etc/caddy/Caddyfile
+              sudo chown root:root /etc/caddy/Caddyfile
+              sudo chmod 644 /etc/caddy/Caddyfile
+              echo "Caddyfile moved and permissions set."
+            else
+              echo "WARNING: Caddyfile not found in /var/www/onereceipt-app/config. Caddy configuration might be incorrect."
+            fi
+
+            echo "Creating .env file..."
+            echo "DISCORD_CLIENT_ID=${{ secrets.DISCORD_CLIENT_ID }}" > .env
+            echo "DISCORD_CLIENT_SECRET=${{ secrets.DISCORD_CLIENT_SECRET }}" >> .env
+            echo "DISCORD_REDIRECT_URI=${{ secrets.DISCORD_REDIRECT_URI }}" >> .env
+            echo "REQUIRED_GUILD_ID=${{ secrets.REQUIRED_GUILD_ID }}" >> .env
+            echo "REQUIRED_ROLE_ID=${{ secrets.REQUIRED_ROLE_ID }}" >> .env
+            echo "DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }}" >> .env
+            echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}" >> .env
+            echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" >> .env
+            echo "REDIS_URL=${{ secrets.REDIS_URL }}" >> .env
+
+            echo "Installing/Updating production dependencies..."
+            bun install --production --frozen-lockfile
+
+            echo "Restarting application onereceipt-app with PM2..."
+            $HOME/.bun/bin/pm2 restart onereceipt-app || $HOME/.bun/bin/pm2 start bun --name "onereceipt-app" -- run start
+            $HOME/.bun/bin/pm2 save
+
+            echo "Restarting Caddy..."
+            sudo systemctl restart caddy

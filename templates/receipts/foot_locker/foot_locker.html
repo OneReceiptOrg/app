@@ -1,0 +1,280 @@
+<html lang="en">
+
+<head>
+    <base href="https://receiptly.cc/static/receipts/footlocker/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/footlocker//footlocker/static/css/style.css">
+    <style>
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .footlocker-top-part {
+            font-size: 26px;
+            font-weight: normal;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .footlocker-top-part div {
+            height: 37px;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: 3300px;
+        }
+
+        td.label {
+            text-align: left;
+        }
+
+        td.value {
+            text-align: right;
+        }
+
+        .separator {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .product-info {
+            display: flex;
+            padding-top: 53px;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        .vat-section {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .product-line {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Remove the black outline when clicking */
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+
+        /* Ensure images span the full width */
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="receipt3" class="footlocker-top-part" contenteditable="true">
+        <div style="height: 70px; padding-top: 50px;" contenteditable="false">
+            <img src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/footlocker.png"
+                style="height: 200%;">
+        </div>
+        <div style="padding-top: 100px; height: 429px; text-align: left;">
+            <div>Visit Us At www.footlocker.com</div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div style="display: flex; align-items: center;">
+                <div style="text-align: left;">STORE : {{storeNumber}}</div>
+                <div style="margin: 0 auto;">REGISTER:{{register}}</div>
+            </div>
+            <div style="height: 5px;"></div>
+            <div style="text-align: left;">CASHIER : {{cashier}}</div>
+            <div style="height: 5px;"></div>
+            <div style="text-align: left;">ASSOCIATE : {{associateNumber}}</div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div style="display: flex; align-items: center;">
+                <div style="text-align: left;">{{date}} {{productName}}</div>
+                <div style="margin: 0 auto;">{{price}}</div>
+            </div>
+            <div style="height: 5px;"></div>
+            <div style="text-align: left;"> {{productSKU}} {{quantity}} @ {{price}}</div>
+        </div>
+        <img src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator2.png">
+        <div style="text-align: left;">
+            <div style="height: 10px;"></div>
+            <div
+                style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+                <div style="text-align: left;">SUBTOTAL</div>
+                <div style="text-align: right;">{{price}}</div>
+            </div>
+            <div
+                style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+                <div style="text-align: left;">SALES TAX</div>
+                <div style="text-align: right;">{{tax}}</div>
+            </div>
+            <div
+                style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+                <div style="text-align: left;">TOTAL</div>
+                <div style="text-align: right;">{{total}}</div>
+            </div>
+            <div style="height: 20px;"></div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator2.png">
+            <div
+                style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+                <div style="text-align: left;">AMOUNT TENDERED</div>
+                <div style="text-align: right;">{{total}}</div>
+            </div>
+            <div style="text-align: left;"> ACCT : *****************{{cardLast4}}</div>
+            <div style="text-align: left;"> EXP : {{cardExpiry}}</div>
+            <div style="text-align: left;"> APPROVAL : {{approvalCode}}</div>
+            <div style="text-align: left;"> CARD SWIPPED</div>
+            <div style="height: 20px;"></div>
+            <div
+                style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+                <div style="text-align: left;">TOTAL PAYMENT</div>
+                <div style="text-align: right;">{{total}}</div>
+            </div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div style="text-align: left;">SALES TAX ANALYSIS</div>
+            <div style="height: 10px;"></div>
+            <div style="text-align: left;">CODE RATE% TAXABLE TAX</div>
+            <div style="text-align: left;">LOCAL {{taxRate}} {{taxableAmount}} {{tax}}</div>
+            <div style="height: 20px;"></div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div style="text-align: left;">TRAN : {{orderNumber}} {{dateTime}}</div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div style="height: 25px;"></div>
+            <div>{{storeNumber}} {{storeName}}</div>
+            <div style="height: 8px;"></div>
+            <div>{{storeAddress}}</div>
+            <div style="height: 8px;"></div>
+            <div>{{storeAddressLine2}}</div>
+            <div style="height: 8px;"></div>
+            <div>{{storeCity}} {{storeZip}}</div>
+            <div style="height: 8px;"></div>
+            <div>{{storePhone}}</div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div style="height: 25px;"></div>
+            <div>*****************SPECIAL OFFER******************</div>
+            <div style="height: 8px;"></div>
+            <div>*****************SPECIAL OFFER******************</div>
+            <div style="height: 8px;"></div>
+            <div>GET $10 OFF YOUR NEXT PURCHASE</div>
+            <div style="height: 8px;"></div>
+            <div>MINIMUM $50 AS</div>
+            <div style="height: 8px;"></div>
+            <div>IN STORE AND ON-LINE</div>
+            <div>GO TO WWW.FOOTLOCKERSURVEY.COM</div>
+            <div style="height: 8px;"></div>
+            <div>OR CALL (800)764-8360</div>
+            <div style="height: 8px;"></div>
+            <div>WITHIN 14 DAYS AND TELL</div>
+            <div style="height: 8px;"></div>
+            <div>US ABOUT YOUR VISIT</div>
+            <div style="height: 50px;"></div>
+            <div>OFFER AVAILABLE FOR FIRST MONTH</div>
+            <div style="height: 8px;"></div>
+            <div>FOLLOWING SURVEY COMPLETION.</div>
+            <div style="height: 50px;"></div>
+            <div>OFFER VALID FOR 30 DAYS.</div>
+            <div style="height: 50px;"></div>
+            <div>VALIDATION CODE : {{validationCode}}</div>
+            <div style="height: 50px;"></div>
+            <div>CAN NOT BE USED WITH ANY</div>
+            <div style="height: 8px;"></div>
+            <div>OTHER DISCOUNT OFFER.</div>
+            <div style="height: 50px;"></div>
+            <div>SELECT MERCHANDISE EXCLUDED</div>
+            <div style="height: 8px;"></div>
+            <div>*****************SPECIAL OFFER******************</div>
+            <div style="height: 8px;"></div>
+            <div>*****************SPECIAL OFFER******************</div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator.png">
+            <div>BECOME A FOOT LOCKER VIP AND GET</div>
+            <div style="height: 8px;"></div>
+            <div>VALUABLE MEMBER ONLY SAVINGS.</div>
+            <div style="height: 50px;"></div>
+            <div>BENEFITS AND ADVANCE PRODUCT</div>
+            <div style="height: 8px;"></div>
+            <div>INFORMATION. ENROLL IN - STORE OR GO TO</div>
+            <div style="height: 8px;"></div>
+            <div>WWW. FOOTLOCKER.COM/VIP</div>
+            <div style="height: 8px;"></div>
+            <div>TO LEARN MORE.</div>
+            <div style="height: 50px;"></div>
+            <div>VIP CUSTOMER SERVICE 800-991-4439</div>
+            <img
+                src="https://receiptly.cc/static/receipts/footlocker/footlocker/static/images/brand_icons/seperator3.png">
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- FORM: -->
+<!-- Products
+{{productName}}
+Price
+{{price}}
+Tax
+{{tax}}
+Date
+{{dateTime}}
+Order Number
+{{orderNumber}}
+Store Number
+{{storeNumber}}
+Register
+{{register}}
+Cashier
+{{cashier}}
+Product SKU
+{{productSKU}}
+Card Last 4
+{{cardLast4}}
+Approval Code
+{{approvalCode}}
+Store Name
+{{storeName}}
+Store Address
+{{storeAddress}}
+Store Address Line 2
+{{storeAddressLine2}}
+Store City
+{{storeCity}}
+Store Zip
+{{storeZip}}
+Store Phone
+{{storePhone}}
+Associate Number
+{{associateNumber}}
+Card Expiry
+{{cardExpiry}}
+Tax Rate
+{{taxRate}}
+Taxable Amount
+{{taxableAmount}}
+Quantity
+{{quantity}}
+Validation Code
+{{validationCode}} -->

@@ -1,0 +1,198 @@
+<html lang="en">
+
+<head>
+    <base href="https://receiptly.cc/static/receipts/flannels/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/flannels/flannels/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/flannels/flannels/static/fonts/MazinDEMO-Medium.otf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .flannels-top-part {
+            font-size: 25px;
+            font-weight: normal;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .flannels-top-part div {
+            height: 37px;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: 1800px;
+        }
+
+        td.label {
+            text-align: left;
+        }
+
+        td.value {
+            text-align: right;
+        }
+
+        .separator {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .product-info {
+            display: flex;
+            padding-top: 53px;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        .vat-section {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .product-line {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Remove the black outline when clicking */
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="receipt3" class="flannels-top-part" contenteditable="true">
+        <div style="height:70px; padding-top: 50px;" contenteditable="false">
+            <img src="https://receiptly.cc/static/receipts/flannels/flannels/static/images/brand_icons/flannels.png"
+                style="height: 200%;">
+        </div>
+        <div style="padding-top: 110px; height: 429px; text-align: left;">
+            <div style="line-height: 1;">Flannels</div>
+            <div style="line-height: 0;">15-17 Oxford Street</div>
+            <div style="line-height: 0;">London W1D 2HU</div>
+            <div style="height: 2px;"></div>
+            <div style="font-size: 35px;">SALE</div>
+            <div style="height: 10px;"></div>
+            <div
+                style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex-grow: 1; text-align: left; line-height: 4;"> Employee ID:</div>
+                <div style="text-align: right; line-height: 4;">511008</div>
+            </div>
+            <div
+                style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex-grow: 1; text-align: left; line-height: 3;"> Employee Number:</div>
+                <div style="text-align: right; line-height: 3;">511008</div>
+            </div>
+            <div style="height: 30px;"></div>
+            <div
+                style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex-grow: 1; text-align: left;"> 11402702270 Stone Island Sweatshirt</div>
+                <div style="text-align: right;">225.00</div>
+            </div>
+            <div style="height: 30px;"></div>
+            <div
+                style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex-grow: 1; text-align: left; line-height: 4.2;"> Subtotal</div>
+                <div style="text-align: right; line-height: 4.2">270.00</div>
+            </div>
+            <div
+                style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; line-height: 3.2;">
+                <div style="flex-grow: 1; text-align: left;"> Total</div>
+                <div style="text-align: right; line-height: 3.2;">270.00</div>
+            </div>
+            <div
+                style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex-grow: 1; text-align: left; line-height: 2;"> VISA DEBIT</div>
+                <div style="text-align: right; line-height: 2;">270.00</div>
+            </div>
+            <div style="margin-top: -55px;">
+                <div style="text-align: left; line-height: 5.8;"> Card No. 125000******9012<cli></cli>
+                </div>
+                <div style="text-align: left; line-height: 4.7;"> Merchant Numder ***24708<cli></cli>
+                </div>
+                <div style="text-align: left; line-height: 3.9;"> Terminal Number ****0801<cli></cli>
+                </div>
+                <div style="text-align: left; line-height: 3;"> App. ID 4B2871ZVSNPPZBR8349|UU/+dcJ029Mi<cli></cli>
+                </div>
+                <div style="text-align: left; line-height: 2;"> AUTH CODE 009886<cli></cli>
+                </div>
+            </div>
+        </div>
+        <div style="height: 190px;"></div>
+        <div>Contactless Payment</div>
+        <div style="text-align: left; line-height: 4;"> Store: 1842 Till: 002 Tran: 000342</div>
+        <div style="text-align: left; line-height: 3;"> Date: 23/09/23 Time: 17:03 Oper: 507314</div>
+        <div style="height: 40px;"></div>
+        <div>Item(s) Sold: 1 Item(s) Returned: 0</div>
+        <div style="height: 15px;"></div>
+        <div style="line-height: 3;">Thank you for shopping at</div>
+        <div style="line-height: 2;">15-17 Oxford Street FL -1842-</div>
+        <div style="height: 15px;"></div>
+        <div style="text-align: center;">
+            <img src="https://receiptly.cc/static/receipts/flannels/flannels/static/images/brand_icons/ending.png">
+            <div style="height: 15px;"></div>
+            <div>VAT Number: GB 707 7253 32</div>
+            <img src="https://receiptly.cc/static/receipts/flannels/flannels/static/images/brand_icons/qr.png">
+            <div style="font-size: 23px;">178102020781260119</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- FORM: -->
+<!-- Products
+Stone Island Sweatshirt
+Price
+225.00
+Tax
+45.00
+Date
+03/17/2024 16:30
+Order Number
+ORD-989350
+Store Name
+Flannels
+Store Address
+15-17 Oxford Street
+Store City
+London W1D 2HU
+Store Phone
++44 344 332 5790
+Transaction Number
+FL-240317-8976
+Customer Name
+James Smith
+Product SKU
+SI-75152
+Product Size
+L
+Sales Associate
+Sarah Wilson
+Card Last 4
+9012 -->

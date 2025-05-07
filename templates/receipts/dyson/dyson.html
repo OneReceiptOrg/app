@@ -1,0 +1,224 @@
+<html lang="en">
+
+<head>
+    <base href="https://receiptly.cc/static/receipts/dyson/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/dyson/dyson/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/dyson/dyson/static/fonts/ascender.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .dyson-top-part {
+            font-size: 26px;
+            font-weight: normal;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .dyson-top-part div {
+            height: 37px;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: 1700px;
+        }
+
+        td.label {
+            text-align: left;
+        }
+
+        td.value {
+            text-align: right;
+        }
+
+        .separator {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .product-info {
+            display: flex;
+            padding-top: 53px;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        .vat-section {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .product-line {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Remove the black outline when clicking */
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="receipt3" class="dyson-top-part" contenteditable="true">
+        <div style="height: 70px; padding-top: 0px;" contenteditable="false">
+            <img src="https://receiptly.cc/static/receipts/dyson/dyson/static/images/brand_icons/dyson.png"
+                style="height: 650%;">
+        </div>
+        <div style="padding-top: 300px; height: 429px;">
+            <div><strong>{{STORE_NAME}}</strong></div>
+            <div>{{STORE_ADDRESS}},</div>
+            <div>{{STORE_CITY}}</div>
+            <div>USA</div>
+            <div>{{STORE_PHONE}}</div>
+            <div style="height: 41px;"></div>
+            <div>{{DATE}}</div>
+        </div>
+        <div style="text-align: left;">
+            <span><strong> Receipt# {{ORDER_NUMBER}}</strong></span>
+        </div>
+        <div style="height: 31px;"></div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+            <div style="text-align: left;">1 {{PRODUCT_NAME}}</div>
+            <div style="text-align: right;">${{PRICE}}</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 0;">
+            <div style="text-align: left;"> Promotion</div>
+            <div style="text-align: right;">-39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+            <div style="text-align: left;">1 Soft Smoothing Bk</div>
+            <div style="text-align: right;">$39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 0;">
+            <div style="text-align: left;"> Promotion</div>
+            <div style="text-align: right;">-39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+            <div style="text-align: left;">1 Airwrap Customize Bk</div>
+            <div style="text-align: right;">$39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 0;">
+            <div style="text-align: left;"> Promotion</div>
+            <div style="text-align: right;">-39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+            <div style="text-align: left;">1 Round Volumizing Bk</div>
+            <div style="text-align: right;">$39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 0;">
+            <div style="text-align: left;"> Promotion</div>
+            <div style="text-align: right;">-39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 1;">
+            <div style="text-align: left;">1 Small Firm Brush BI</div>
+            <div style="text-align: right;">$39.99</div>
+        </div>
+        <div
+            style="text-align: left; width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; line-height: 0;">
+            <div style="text-align: left;"> Promotion</div>
+            <div style="text-align: right;">-39.99</div>
+        </div>
+        <div style="height: 41px;"></div>
+
+        <div
+            style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex-grow: 1; text-align: center;">Net Total (Excl Tax)</div>
+            <div style="text-align: right;">${{PRICE}}</div>
+        </div>
+        <div
+            style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex-grow: 1; text-align: center;">Tax Total (Sales Tax)</div>
+            <div style="text-align: right;">${{TAX}}</div>
+        </div>
+        <div
+            style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex-grow: 1; text-align: center;"><strong>Total Charge USD</strong></div>
+            <div style="text-align: right;">${{PRICE}}</div>
+        </div>
+        <div style="height: 15px;"></div>
+        <div
+            style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex-grow: 1; text-align: center;">Payment Credit Card ({{CARD_LAST4}})</div>
+            <div style="text-align: right;">${{PRICE}}</div>
+        </div>
+        <div
+            style="width: 600px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="text-align: center; flex: 1;">CnipnPin Auth:</div>
+            <div></div>
+        </div>
+        <div style="width: 600px; text-align: center; margin-top: -5px;">
+            {{ORDER_REFERENCE}}
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- FORM: -->
+<!-- Products
+Dyson V15 Detect Absolute
+Price
+699.99
+Tax
+140.00
+Date
+03/15/2024 15:45
+Order Number
+ORD-132431
+Store Name
+Dyson Demo Store
+Store Address
+123 Oxford Street
+Store City
+London W1D 2LF
+Store Phone
++44 800 298 0298
+Order Reference
+DYS-24031500789
+Customer Name
+Emma Thompson
+Customer Email
+emma.t@email.com
+Product Model
+V15 Detect Absolute
+Product SKU
+419128-01
+Serial Number
+XB22-UK-LEA193
+Card Last 4
+7823 -->

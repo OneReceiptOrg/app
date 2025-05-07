@@ -1,0 +1,1625 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head prefix="og: http://ogp.me/ns# scribd-com: http://ogp.me/ns/apps/scribd-com#">
+    <link rel="preconnect" href="https://s-f.scribdassets.com/">
+    <link rel="preload" crossorigin="anonymous"
+        href="https://s-f.scribdassets.com/webpack/assets/fonts/source_sans_pro/regular/source_sans_pro_regular.latin.e8ecbdac.woff2"
+        as="font" type="font/woff2">
+    <link rel="preload" crossorigin="anonymous"
+        href="https://s-f.scribdassets.com/webpack/assets/fonts/source_sans_pro/semibold/source_sans_pro_600.latin.76017e81.woff2"
+        as="font" type="font/woff2">
+    <link rel="preload" crossorigin="anonymous"
+        href="https://s-f.scribdassets.com/webpack/assets/fonts/icons/icons.d2ecf18b.woff2" as="font" type="font/woff2">
+    <script src="https://connect.facebook.net/en_US/sdk.js?hash=9b2490ef90fbdd949060bde124f64b35" async=""
+        crossorigin="anonymous"></script>
+    <script>window.Scribd = window.Scribd || {}; window.Scribd.config = { "js_logging_enabled": false, "raise_js_callback_errors": false, "session_domain": ".scribd.com", "csrf_token_url": "https://www.scribd.com/csrf_token", "facebook": { "app_id": "136494494209", "permissions": "email,public_profile", "namespace": "scribd-com", "link_url": "/facebook_link" } }; window.Scribd.webpack_public_path = "https://s-f.scribdassets.com/webpack/monolith/"; window.Scribd.AssetPath = "https://s-f.scribdassets.com/";</script>
+    <style>
+        .outer_page,
+        .outer_page_container {
+            position: relative
+        }
+
+        .outer_page {
+            display: block;
+            font-size: 16px;
+            overflow: hidden;
+            contain: strict
+        }
+
+        .outer_page.book_view {
+            display: inline-block
+        }
+
+        .outer_page.blurred_page {
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .newpage {
+            white-space: nowrap;
+            position: relative;
+            top: 0;
+            left: 0;
+            text-rendering: auto;
+            color: #000
+        }
+
+        .image_layer {
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        .image_layer .absimg {
+            position: absolute;
+            border: none;
+            left: 0;
+            -webkit-user-drag: none
+        }
+
+        .image_layer .absimg::selection {
+            background-color: transparent
+        }
+
+        .link_layer,
+        .text_layer {
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        .text_layer {
+            transform: scale(.2);
+            transform-origin: top left
+        }
+
+        .text_layer div,
+        .text_layer span {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            line-height: 1
+        }
+
+        .text_layer span {
+            height: 1px
+        }
+
+        .text_layer span.a,
+        .text_layer span.g {
+            position: absolute;
+            border: none;
+            left: 0
+        }
+
+        .text_layer span.w {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer a.ll {
+            position: absolute;
+            display: block;
+            color: inherit;
+            text-decoration: none
+        }
+
+        .text_layer span.l {
+            margin: 0
+        }
+
+        .text_layer span.l,
+        .text_layer span.l1 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline
+        }
+
+        .text_layer span.l1 {
+            margin: 0 0 0 -1px
+        }
+
+        .text_layer span.l2 {
+            margin: 0 0 0 -2px
+        }
+
+        .text_layer span.l2,
+        .text_layer span.l3 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline
+        }
+
+        .text_layer span.l3 {
+            margin: 0 0 0 -3px
+        }
+
+        .text_layer span.l4 {
+            margin: 0 0 0 -4px
+        }
+
+        .text_layer span.l4,
+        .text_layer span.l5 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline
+        }
+
+        .text_layer span.l5 {
+            margin: 0 0 0 -5px
+        }
+
+        .text_layer span.l6 {
+            margin: 0 0 0 -6px
+        }
+
+        .text_layer span.l6,
+        .text_layer span.l7 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline
+        }
+
+        .text_layer span.l7 {
+            margin: 0 0 0 -7px
+        }
+
+        .text_layer span.l8 {
+            margin: 0 0 0 -8px
+        }
+
+        .text_layer span.l8,
+        .text_layer span.l9 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline
+        }
+
+        .text_layer span.l9 {
+            margin: 0 0 0 -9px
+        }
+
+        .text_layer span.l10 {
+            margin: 0 0 0 -10px
+        }
+
+        .text_layer span.l10,
+        .text_layer span.l11 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline
+        }
+
+        .text_layer span.l11 {
+            margin: 0 0 0 -11px
+        }
+
+        .text_layer span.l12 {
+            white-space: nowrap;
+            padding: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline;
+            margin: 0 0 0 -12px
+        }
+
+        .text_layer span.w1 {
+            width: 1px
+        }
+
+        .text_layer span.w1,
+        .text_layer span.w2 {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer span.w2 {
+            width: 2px
+        }
+
+        .text_layer span.w3 {
+            width: 3px
+        }
+
+        .text_layer span.w3,
+        .text_layer span.w4 {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer span.w4 {
+            width: 4px
+        }
+
+        .text_layer span.w5 {
+            width: 5px
+        }
+
+        .text_layer span.w5,
+        .text_layer span.w6 {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer span.w6 {
+            width: 6px
+        }
+
+        .text_layer span.w7 {
+            width: 7px
+        }
+
+        .text_layer span.w7,
+        .text_layer span.w8 {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer span.w8 {
+            width: 8px
+        }
+
+        .text_layer span.w9 {
+            width: 9px
+        }
+
+        .text_layer span.w9,
+        .text_layer span.w10 {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer span.w10 {
+            width: 10px
+        }
+
+        .text_layer span.w11 {
+            width: 11px
+        }
+
+        .text_layer span.w11,
+        .text_layer span.w12 {
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            border: none;
+            height: 1px;
+            line-height: 1;
+            display: inline-block
+        }
+
+        .text_layer span.w12 {
+            width: 12px
+        }
+    </style>
+    <script type="application/javascript">var DocumentManager = function () { "use strict"; window.__app_loaded = !1, window.__pages_to_blur = []; const e = "font_preload_bed", t = "rasterize"; function i(e, t, i) { return (t = function (e) { var t = function (e, t) { if ("object" != typeof e || !e) return e; var i = e[Symbol.toPrimitive]; if (void 0 !== i) { var s = i.call(e, t || "default"); if ("object" != typeof s) return s; throw new TypeError("@@toPrimitive must return a primitive value.") } return ("string" === t ? String : Number)(e) }(e, "string"); return "symbol" == typeof t ? t : t + "" }(t)) in e ? Object.defineProperty(e, t, { value: i, enumerable: !0, configurable: !0, writable: !0 }) : e[t] = i, e } function s(e, t, i, s, n, r, o) { try { var a = e[r](o), l = a.value } catch (e) { return void i(e) } a.done ? t(l) : Promise.resolve(l).then(s, n) } function n(e) { return function () { var t = this, i = arguments; return new Promise((function (n, r) { var o = e.apply(t, i); function a(e) { s(o, n, r, a, l, "next", e) } function l(e) { s(o, n, r, a, l, "throw", e) } a(void 0) })) } } function r(e) { return r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, r(e) } function o(e) { var t = function (e, t) { if ("object" != r(e) || !e) return e; var i = e[Symbol.toPrimitive]; if (void 0 !== i) { var s = i.call(e, t || "default"); if ("object" != r(s)) return s; throw new TypeError("@@toPrimitive must return a primitive value.") } return ("string" === t ? String : Number)(e) }(e, "string"); return "symbol" == r(t) ? t : t + "" } function a(e, t, i) { return (t = o(t)) in e ? Object.defineProperty(e, t, { value: i, enumerable: !0, configurable: !0, writable: !0 }) : e[t] = i, e } function l(e, t) { var i = Object.keys(e); if (Object.getOwnPropertySymbols) { var s = Object.getOwnPropertySymbols(e); t && (s = s.filter((function (t) { return Object.getOwnPropertyDescriptor(e, t).enumerable }))), i.push.apply(i, s) } return i } function h(e) { var t, i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}; (t = "errors", "undefined" != typeof window && window.Scribd && window.Scribd.Sentry && window.Scribd.Sentry.queue && window.Scribd.Sentry.queue[t] || []).push({ errorObject: e, extraInfo: i }) } function d(e) { var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}; if (!function (e) { var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}; return !!("undefined" != typeof window && window.Scribd && window.Scribd.Sentry && window.Scribd.Sentry.disabled) && (console.error(e, t), !0) }(e, t)) if ("undefined" != typeof window && window.Sentry && window.Sentry.captureException && window.Sentry.captureMessage && window.Sentry.configureScope && window.Sentry.withScope) { var i = Object.keys(t); i.length ? window.Sentry.withScope((s => { i.forEach((e => { s.setExtra(e, t[e]) })), window.Sentry.captureException(e) })) : window.Sentry.captureException(e) } else h(e, t) } var g = e => new RegExp("[^".concat(e, "]"), "g"), c = /[a-zA-Z]/, u = "\\w\\.\\-\\/", m = "".concat(u, ":"), p = g(u), f = g(m), _ = ["boolean", "number"]; function w(e) { return "string" != typeof e || !1 === c.test(e[0]) ? null : e.replace(p, "_") } function y(e) { return "string" == typeof e ? e.replace(f, "_") : _.includes(typeof e) ? e.toString() : void 0 === e ? "undefined" : null === e ? "null" : null } var b = "count", P = "gauge", v = "increment", E = "timing", M = new Promise((e => e)), S = new Promise((e => e)); function F(e, t, i) { return x.apply(this, arguments) } function x() { return x = n((function* (e, t, i) { var s = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {}, n = function () { var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, t = {}; for (var [i, s] of Object.entries(e)) { var n = w(i), r = y(s); if (null === n || null === r) return null; t[n] = r } return t }(function (e) { for (var t = 1; t < arguments.length; t++) { var i = null != arguments[t] ? arguments[t] : {}; t % 2 ? l(Object(i), !0).forEach((function (t) { a(e, t, i[t]) })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(i)) : l(Object(i)).forEach((function (t) { Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(i, t)) })) } return e }({ brand: yield S }, s)); if (null === n) return d(new Error("Datadog: Invalid metric tags"), { tags: s }); var r = { type: e, metric: t, value: null != i ? i : void 0, tags: n }; try { var o = yield M; yield fetch("".concat(o).concat("/log/dd"), { body: JSON.stringify(r), headers: { "Content-Type": "text/plain" }, method: "POST" }) } catch (e) { e.message = "Datadog reportMetric: ".concat(e.message), d(e, r) } })), x.apply(this, arguments) } F.bind(void 0, b), F.bind(void 0, P); var C = function () { var e = n((function* (e, t) { yield F(v, e, null, t) })); return function (t, i) { return e.apply(this, arguments) } }(); F.bind(void 0, E); const V = { encode: window.btoa.bind(window), decode: window.atob.bind(window) }; function O(e, t) { e.href = t } const W = function () { const e = navigator.userAgent.toLowerCase(); return e.indexOf("mobile") > -1 && e.indexOf("safari/") > -1 && -1 === e.indexOf("chrome/") }(); class N { constructor(e) { this.possibleEvents = e || [], this.initEventHelper() } initEventHelper() { this.eventListenerEnabled = !0, this.eventListeners = {}; for (let e = 0; e < this.possibleEvents.length; e++)this.eventListeners[this.possibleEvents[e]] = {} } addEvent(e, t) { if (!this.eventListeners[e]) throw Error(e + " is not a valid type of event"); this.eventListeners[e].next_uid || (this.eventListeners[e].next_uid = 1), t._event_listener_uid || (t._event_listener_uid = this.eventListeners[e].next_uid, this.eventListeners[e].next_uid++), this.eventListeners[e][t._event_listener_uid] = t } removeEvent(e, t) { if (!this.eventListeners[e]) throw Error(e + " is not a valid type of event"); delete this.eventListeners[e][t._event_listener_uid] } fireEvent(e, ...t) { if (!this.eventListenerEnabled) return; const i = this.eventListeners[e], s = e => { e.apply(this, t) }; for (const e in i) "next_uid" !== e && Object.prototype.hasOwnProperty.call(i, e) && s(i[e]) } } class L { constructor() { } name() { return this._name } register(e, t) { if (this.registered) throw Error("This ViewManager is already registered"); this.registered = !0, this.documentManager = e, this.viewportManager = t, this._currentPageWidth = window.defaultViewWidth, this._currentZoomMultiplier = 1, this._updatePageWidths(); const i = this.documentManager.firstVisiblePage; this._register(e, t), i && this.documentManager.gotoPage(i.pageNum, {}), e.executeCallbacks() } _zoomedPageWidth() { return this._currentPageWidth * this._currentZoomMultiplier } _updatePageWidths() { this.documentManager.setPageWidths(this._zoomedPageWidth()) } isTopPageInView() { return !0 } _register(e, t) { } unregister() { if (!this.registered) throw Error("This ViewManager is already unregistered"); this.isFullscreen && this.exitFullscreen(), this._setBodyWidth(), this._unregister(), this.registered = !1, delete this.documentManager, delete this.viewportManager } _unregister() { } _pagingStep() { return 1 } gotoPage(e, t) { if (!this.registered) throw Error("ViewManager must be registerd to call gotoPage"); this._gotoPage(e, t) } _gotoPage(e, t) { } _fireHideExtras() { this.documentManager._fireHideExtras(), this._extrasHidden = !0 } _fireShowExtras() { this.documentManager._fireShowExtras(), this._extrasHidden = !1 } enterFullscreen() { if (this.isFullscreen) throw Error("Fullscreen is already set"); this._setBodyWidth(), this.viewportManager.addEvent("resize", this._fullscreenResizedCallback), this._fireHideExtras(), this.resetZoom(), this._enterFullscreen(), this._fullscreenResized(this.viewportManager.viewRect), this._currentPageWidth = this.viewportManager.viewRect.width, this.isFullscreen = !0; const e = this.documentManager.firstVisiblePage; e && this.documentManager.gotoPage(e.pageNum, {}), this.documentManager._fireEnteredFullscreen() } exitFullscreen() { if (!this.isFullscreen) throw Error("Fullscreen is not set"); this.viewportManager.removeEvent("resize", this._fullscreenResizedCallback), this._fireShowExtras(), this.resetZoom(), this._exitFullscreen(), this.isFullscreen = !1; const e = this.documentManager.firstVisiblePage; e && this.documentManager.gotoPage(e.pageNum, {}), this.documentManager._fireExitedFullscreen() } _viewBarWidth() { return this._extrasHidden ? 0 : this.documentManager.options.extrasWidth } _enterFullscreen() { } _exitFullscreen() { } _fullscreenResized(e) { } _scrollWithZoom(e, t) { window.scrollTo(0, e.top * t) } zoom(e) { const t = this.viewportManager.viewRect; t && (this._currentZoomMultiplier *= e, this._setBodyWidth(), this._updatePageWidths(), this.documentManager.setIsScrolling(!0), this._scrollWithZoom(t, e), this._zoomed(), this.documentManager.setIsScrolling(!1), this.documentManager._fireZoomed(e)) } _zoomed() { } resetZoom() { this._currentZoomMultiplier = 1, this._setBodyWidth(), this._updatePageWidths(), this._zoomed() } _setBodyWidth() { if (window.DocumentManager.scrollParent) return; if (!1 === window.DocumentManager.updateBodyWidth) return; const e = document.documentElement.clientWidth, t = this._zoomedPageWidth() + this._viewBarWidth() + 10, i = document.getElementById("global_header"); t > e ? (document.body.style.width = `${t}px`, i && (i.style.width = `${e}px`)) : (document.body.style.width = "100%", i && (i.style.width = "100%")) } } class R extends L { constructor() { super(), this._name = "scroll", this._verticalPositionChangeCallback = () => { this.checkAndUpdateVisiblePages() }, this._fullscreenResizedCallback = () => { this._fullscreenResized() }, this.shouldRestorePosition = !0 } _updateInViewport(e) { const t = this.viewportManager.viewRect, i = e.boundingRect, s = e.isVisible; return e.isVisible = !(!t || !i) && (i.left < t.right && i.right > t.left && i.top < t.bottom && i.bottom > t.top), this.adjacentVisiblePages = 1, s !== e.isVisible } checkAndUpdateVisiblePages() { let e = !1; for (const t in this.pages) if (Object.prototype.hasOwnProperty.call(this.pages, t)) { const i = this.pages[t], s = this._updateInViewport(i); e = e || s } e ? this.documentManager.visiblePagesChanged() : this.documentManager.scheduleLogPageView(), this._updateDisplayOnPages() } _updateDisplayOnPages() { if (this.documentManager.firstVisiblePage && this.documentManager.lastVisiblePage) { const e = this.documentManager.firstVisiblePage.pageNum - this.adjacentVisiblePages, t = this.documentManager.lastVisiblePage.pageNum + this.adjacentVisiblePages; for (const i in this.pages) if (Object.prototype.hasOwnProperty.call(this.pages, i)) { const s = this.pages[i]; s && (s.pageNum >= e && s.pageNum <= t ? s.display() : (s.hide(), this.documentManager.fireEvent("pageHide", s))) } } } _zoomed() { this.checkAndUpdateVisiblePages() } _register(e) { this.pages = e.pages, this.viewportManager.addEvent("vertical", this._verticalPositionChangeCallback); for (const e in this.pages) if (Object.prototype.hasOwnProperty.call(this.pages, e)) { this.documentManager.pages[e].containerElem.style.display = "" } this.documentManager.setPageMissingModulesVisible(!0), this.documentManager._updatePageBoundingRects(), this.checkAndUpdateVisiblePages() } isTopPageInView() { const e = this.documentManager.firstVisiblePage; return !e || (this.documentManager._expectedFirstPageNum > e.pageNum || e.boundingRect.top + 5 >= this.viewportManager.viewRect.top) } _unregister() { this.viewportManager.removeEvent("vertical", this._verticalPositionChangeCallback), delete this.pages } _gotoPage(e, t) { if (t = t || {}, !Object.prototype.hasOwnProperty.call(this.pages, e)) return; const i = this.documentManager.pages[e]; this.documentManager.setIsScrolling(!0); const s = this.documentManager.viewportManager.container; return i._updateBoundingRect(), s === window ? scrollTo(i.boundingRect.left, i.boundingRect.top - (t.offset || 0)) : s.scrollTop = i.boundingRect.top - (t.offset || 0), this.documentManager.setIsScrolling(!1), this.documentManager.isScrolling || this.documentManager.visiblePagesChanged(), i.pageNum } _gotoNextPage() { this.documentManager.firstVisiblePage && this.documentManager.gotoPage(this.documentManager.firstVisiblePage.pageNum + 1, { direction: 1 }) } _gotoPreviousPage() { this.documentManager.firstVisiblePage && this.documentManager.gotoPage(this.documentManager.firstVisiblePage.pageNum - 1, { direction: -1 }) } _setWidth(e) { const t = this.pagePosition(); this._currentPageWidth = e, this._updatePageWidths(), this._setBodyWidth(), this.restorePosition(t) } _fullscreenResized() { this._setWidth((window.innerWidth || document.documentElement.clientWidth) - 30) } _enterFullscreen() { this._previousPageWidth = this._currentWidth || window.defaultViewWidth } _exitFullscreen() { this._setWidth(this._previousPageWidth) } pagePosition() { const e = this.viewportManager.container, t = this.documentManager.pages[this.documentManager.currentPageNum() || 1], i = e.scrollTop, s = e.scrollLeft, n = (i - t.boundingRect.top) / t.boundingRect.height, r = (s - t.boundingRect.left) / t.boundingRect.width; return [t.pageNum, n, r] } restorePosition(e) { if (this._disableRestorePosition) return; const t = this.pages[e[0]].containerElem; if (this._gotoPage(e[0], { offset: -Math.floor(e[1] * t.clientHeight) }), null !== e[2]) { const i = this.viewportManager.container; let s = e[2]; s = Math.floor(s * t.clientWidth); const n = t.clientWidth - i.clientWidth; i.scrollLeft = Math.min(n, s) } } zoom(e) { if (!this.viewportManager.viewRect) return; const t = this.pagePosition(); this._currentZoomMultiplier *= e, this._setBodyWidth(), this._updatePageWidths(), this.shouldRestorePosition && this.restorePosition(t), this._zoomed(), this.documentManager._fireZoomed(e) } } class T extends L { constructor() { super(), this._name = "slideshow", this.currentPageId = null, this._fullscreenResizedCallback = e => { this._fullscreenResized(e) } } _register() { this._prepareDisplay(); const e = document.getElementById("scroll_preventer"); e && (e.style.overflow = "hidden", e.style.height = "100%") } _unregister() { const e = document.getElementById("scroll_preventer"); e && (e.style.overflow = "visible", e.style.height = "auto") } _prepareDisplay() { for (const e in this.documentManager.pages) if (Object.prototype.hasOwnProperty.call(this.documentManager.pages, e)) { const t = this.documentManager.pages[e]; t.containerElem.style.display = "none", t.hide() } this.documentManager.setPageMissingModulesVisible(!1), this.documentManager.gotoPage(this.documentManager.currentPageNum() || 1) } _setPageBounds(e) { const t = this.documentManager.pages[this.currentPageId]; t && t.setBounds(e.width, e.height) } _gotoPage(e) { if (!Object.prototype.hasOwnProperty.call(this.documentManager.pages, e)) return; let t; this.currentPageId && (t = this.documentManager.pages[this.currentPageId], t && (t.isVisible = !1, t.containerElem.style.display = "none", t.hide())), this.currentPageId = e, t = this.documentManager.pages[e], this.isFullscreen && this._setPageBounds(this.viewportManager.viewRect), t.isVisible = !0, t.display(!0), t.containerElem.style.display = "", t._updateBoundingRect(), this.documentManager.visiblePagesChanged() } _setWidth(e) { this._currentPageWidth = e, this.documentManager.setPageWidths(e) } _fullscreenResized(e) { this._setPageBounds(e) } _enterFullscreen() { this._previousPageWidth = this._currentPageWidth || window.defaultViewWidth } _exitFullscreen() { this._setWidth(window.defaultViewWidth), this._setBodyWidth() } } class k { constructor(e = {}) { const { url: t, id: i, shortstyle: s, family: n, fallback: r, weight: o, style: a } = e; this.url = t, this.id = i, this.shortstyle = s, this.family = n, this.fallback = r, this.weight = o, this.style = a } setupFont() { const { url: e, family: t, weight: i, style: s } = this, n = new FontFace(t, `url(${e})`, { weight: i, style: s }); return n.display = "swap", n } getFontFamily() { return `font-family: ${this.family};` } getFontWeight() { return `font-weight: ${this.weight};` } getFontStyle() { return `font-style: ${this.style};` } createPreloadElem() { return `<span style="font-family: ${this.family}">scribd.</span>` } } class A { constructor(e) { this.fonts = [], this.docManager = e, this._cssRuleQueue = [], this._fontLoadQueue = [] } addCSSRuleToQueue(e, t = !1) { this._cssRuleQueue.push(e), t && this._flushCSSRuleQueue() } addFont(e, t, i, s, n, r) { const o = this._fontUrl(i, e), a = new k({ url: o, id: e, shortstyle: t, family: i, fallback: s, weight: n, style: r }); return this.fonts[e] = a, a } addFontToQueue(e) { const t = this.fonts[e]; t._loadQueued || (t._loadQueued = !0, this._fontLoadQueue.push(t)) } flushFontQueue() { if (0 === this._fontLoadQueue.length) return; if (this.docManager.displayType === t) return; const e = this._fontLoadQueue; return this._fontLoadQueue = [], new Promise(requestAnimationFrame).then((() => this._loadFonts(e))) } initStyles() { this.docManager.displayType !== t && (this._initFamilyCSS(), this._initHidersCSS(), this._flushCSSRuleQueue("preload_styler")) } setupTestElements() { } maxFontsLoading() { return 10 } _appendNewStyleBlock() { const e = document.createElement("style"); return document.getElementsByTagName("head")[0].appendChild(e), e } _flushCSSRuleQueue(e) { if (this._cssRuleQueue.length > 0) { const t = e && document.getElementById(e) || this._appendNewStyleBlock(), i = this._cssRuleQueue.join("\n"); t.appendChild(document.createTextNode(i)), this._cssRuleQueue = [] } } _loadFonts(e, t = 0, i = 10) { const s = [], n = [], r = Math.min(t + i, e.length); for (let i = t; i < r; i++) { const t = e[i].setupFont(), r = new Promise((e => { t.load().then((t => { e(t) })).catch((t => { e(t) })) })); s.push(r), n.push(`.${t.family}`) } return Promise.all(s).then((s => { if (s.forEach((e => { e instanceof FontFace && document.fonts.add(e) })), this.addCSSRuleToQueue(`${n.join(", ")} { display: unset; }`, !0), r < e.length) return new Promise(requestAnimationFrame).then((() => this._loadFonts(e, t + i, i))) })) } _fontUrl(e, t) { const i = [this.docManager.fontAggregatorHosts[this.docManager._currentFontAggregatorHostIdx], this.docManager.assetPrefix, "fonts"]; return i.push(`${t.toString().padStart(4, 0)}.woff2`), i.join("/") } _initHidersCSS() { const e = []; for (let t = 0; t < this.fonts.length; t++)e.push(`.${this.fonts[t].family}`); this.addCSSRuleToQueue(`${e.join(", ")} { display: none; }\n`) } _hasEmbedDiv() { return "undefined" != typeof scribd && void 0 !== scribd.embed_div_id } _getEmbedDivSelector() { return `#${scribd.embed_div_id} ${selector}` } _initFamilyCSS() { for (let e = 0; e < this.fonts.length; e++) { const t = this.fonts[e].family, i = this.fonts[e].fallback, s = this.fonts[e].weight, n = this.fonts[e].style; let r = `div.${t} span`; this._hasEmbedDiv() && (r = this._getEmbedDivSelector()), this.addCSSRuleToQueue(`${r} { font-family: ${t}, ${i}; font-weight: ${s}; font-style: ${n};\n}`) } } } class B extends A { constructor(e) { super(e) } getFontAggregatorHostUrl(e) { const t = [this.docManager.fontAggregatorHosts[this.docManager._currentFontAggregatorHostIdx], this.docManager.assetPrefix, e.join(","), 12]; return t.push("ttfs.css"), t.join("/") } getFontAggregatorHostForFonts(e) { const t = []; for (let i = 0; i < e.length; i++)t.push(e[i].shortstyle + e[i].id); return t.sort(), this.getFontAggregatorHostUrl(t) } _addCSSLink(e) { const t = document.createElement("link"); t.href = e, t.rel = "stylesheet", t.type = "text/css"; document.getElementsByTagName("head")[0].appendChild(t) } flushFontQueue() { if (0 === this._fontLoadQueue.length) return; if (this.docManager.displayType === t) return; const e = this._fontLoadQueue; this._fontLoadQueue = []; const i = this.getFontAggregatorHostForFonts(e); this._addCSSLink(i), this._flushCSSRuleQueue() } setupTestElements() { if (this.docManager.displayType === t) return; let i = ""; for (let e = 0; e < this.fonts.length; e++) { i += this.fonts[e].createPreloadElem() } const s = document.getElementById(e); s.innerHTML = i, document.body.appendChild(s), this.addCSSRuleToQueue(`#${e} span {display: block; visibility: hidden}`, true) } maxFontsLoading(e, t, i) { return e >= 20 && 0 === t && i >= 11 || e >= 20 && i >= 100 ? 10 : 100 } } class I extends N { constructor() { super(I.EVENT_NAMES), this.viewRect = null, this.enabled = !1, this._scrollCallback = () => { this._eventHandler("scroll") }, this._resizeCallback = () => { this._eventHandler("resize") } } _makeViewRect() { const e = this.container, t = document.documentElement, i = e.scrollTop || e.scrollY || e.pageYOffset || t.scrollTop, s = e.scrollLeft || e.scrollX || e.pageXOffset || t.scrollLeft, n = e.clientWidth || e.innerWidth || t.clientWidth, r = e.clientHeight || e.innerHeight || t.clientHeight, o = { top: i, left: s, right: s + n, bottom: i + r, width: n, height: r }; if (this.container !== window) { const e = this.container.getBoundingClientRect && this.container.getBoundingClientRect(); e && (o.offsetX = e.left, o.offsetY = e.top) } return o } _updateViewRect() { const e = this.viewRect; this.viewRect = this._makeViewRect(); return { xChanged: !e || e.left !== this.viewRect.left || e.width !== this.viewRect.width, yChanged: !e || e.top !== this.viewRect.top || e.height !== this.viewRect.height } } _eventHandler(e) { const t = this._updateViewRect();["resize", "both"].includes(e) && (t.xChanged || t.yChanged) && this.fireEvent("resize", this.viewRect), (t.xChanged || t.yChanged) && this.fireEvent("either", this.viewRect), t.xChanged && this.fireEvent("horizontal", this.viewRect), t.yChanged && this.fireEvent("vertical", this.viewRect) } enable() { if (this.enabled) throw Error("ViewportManager has already been enabled"); this.enabled = !0, this.container = window.DocumentManager.scrollParent || window, this._eventHandler("both"), this.container.addEventListener("resize", this._resizeCallback, !1); (window.DocumentManager.scrollParent ? this.container : window.document).addEventListener("scroll", this._scrollCallback, !1) } disable() { if (!this.enabled) throw Error("ViewportManager has already been disabled"); this.enabled = !1, window.removeEventListener("resize", this._resizeCallback, !1), this.container.removeEventListener("scroll", this._scrollCallback, !1) } } i(I, "EVENT_NAMES", ["vertical", "horizontal", "either", "resize"]); class H { constructor(e, t) { this.pages = [], this.loaded = !1, this.fonts = {}, this.numFonts = 0, this.fontLoader = t, this.groupNum = e || 0 } addPage(e) { for (let t = 0; t < e.fonts.length; t++) { const i = e.fonts[t]; void 0 === this.fonts[i] && (this.fonts[i] = !0, this.numFonts += 1) } this.pages.push(e) } isFull() { const e = this.pages.length, t = this.groupNum, i = this.numFonts; return this.hasLoaded || i > this.fontLoader.maxFontsLoading(i, t, e) } load(e) { if (this.hasLoaded) return; this.hasLoaded = !0; const t = () => { for (const e in this.fonts) Object.prototype.hasOwnProperty.call(this.fonts, e) && this.fontLoader.addFontToQueue(e); this.fontLoader.flushFontQueue() }; e ? window.setTimeout(t.bind(this), e) : t.call(this) } newNextGroup() { return new H(this.groupNum + 1, this.fontLoader) } } class z { constructor(e) { for (const t in z._defaultParams) Object.prototype.hasOwnProperty.call(z._defaultParams, t) && (this[t] = e[t] || z._defaultParams[t]); const t = this._getMissingRequiredParams(); if (t.length) throw Error("Missing required Page param(s): " + t.join(", ")); if (!this.contentUrl && !this.innerPageElem) throw Error("Must initialize a page with either a contentUrl or innerPageElem element"); if (!0 === this.containerElem.boundToPageObj) throw Error("Container Elem is already bound to a page.  We shouldn't get here"); this.containerElem.boundToPageObj = !0, this._targetHeight = null, this._targetWidth = null, this._innerPageVisible = !!this.innerPageElem, this._imagesTurnedOn = !1, this.boundingRect = null, this.isVisible = !1, this.displayDirty = !0, this.displayOn = null, this.loadHasStarted = !!this.innerPageElem } _getMissingRequiredParams() { const e = []; let t; for (let i = 0; i < z._requiredParams.length; i++)t = z._requiredParams[i], this[t] || e.push(t); return e } _updateBoundingRect() { let e, t, i, s; if (this.containerElem.getBoundingClientRect && this.docManager.viewportManager.viewRect) { const n = this.containerElem.getBoundingClientRect(), r = this.docManager.viewportManager.viewRect; t = n.left + r.left, e = n.top + r.top, r.offsetX && (t -= r.offsetX), r.offsetY && (e -= r.offsetY), i = n.right - n.left, s = n.bottom - n.top, this.boundingRect = { left: t, top: e, bottom: e + s, right: t + i, width: i, height: s } } else e = this.containerElem.offsetTop, t = this.containerElem.offsetLeft, i = this.containerElem.offsetWidth, s = this.containerElem.offsetHeight, this.boundingRect = { left: t, top: e, bottom: e + s, right: t + i, width: i, height: s } } _setContainerContents(e) { const t = e.replace(/<noscript *><img[^<>]*\/><\/noscript *>/g, ""), i = document.createElement("div"); i.innerHTML = t.trim(); const s = i.firstChild; this.containerElem.appendChild(s), this.innerPageElem = s, this.turnOnLinks(), this.fixSVGFonts(), this._fitContentsToWidth(), this.displayDirty = !0, this.displayOn ? this.display() : this.hide() } fixSVGFonts() { if (!this._svgFontsFixed && this.innerPageElem) { if (W) { const e = function (t) { if (t.nodeType === document.TEXT_NODE) { const i = t.textContent.search(/[  \n][^ \n ]/); i >= 0 && e(t.splitText(i + 1)) } else { const i = t.childNodes; for (let t = 0; t < i.length; t++)e(i[t]) } }, t = function (e) { const i = e.childNodes; for (let s = 0; s < i.length; s++) { const n = i[s]; if (n.nodeType === document.ELEMENT_NODE) t(n); else { const t = i[s + 1]; t && "#text" === t.nodeName && e.insertBefore(document.createElement("span"), t) } } }; e(this.innerPageElem), t(this.innerPageElem) } this._svgFontsFixed = !0 } } imagePageContent(e) { return `<img src="${e}"></img>` } load() { if (this.currentlyLoading = !0, this.loadHasStarted = !0, this.innerPageElem) throw Error("We already have loaded this page, but it looks like you called loadPage again"); this.loadFonts(); const e = `page${this.pageNum}_callback`; if (window[e]) try { delete window[e] } catch (t) { window[e] = void 0 } if (this.docManager.displayType === t) return delete this.currentlyLoading, void this._setContainerContents(this.imagePageContent(this.contentUrl)); const i = document.createElement("script"); window[e] = t => { i && i.parentNode === document.body && document.body.removeChild(i); const s = t[0]; delete this.currentlyLoading, this._setContainerContents(s); const n = document.getElementById(this.containerElem.id); if (n && n.classList.contains("blurred_page") && this.docManager.doDynamicBlurring(this.containerElem.id), this.docManager.fireEvent("pageLoaded", this.containerElem), n && this.docManager.lazyImageObserver) { const e = n.querySelectorAll(".absimg"); for (let t = 0; t < e.length; t++)e[t].style.display = "block"; this.docManager.observeImages(this.containerElem) } try { delete window[e] } catch (t) { window[e] = void 0 } }, i.src = this.contentUrl, i.type = "text/javascript", i.charset = "UTF-8", window.Osano && (i.dataset.osano = "ESSENTIAL"), document.body.appendChild(i) } remove() { if (this.innerPageElem) { this.innerPageElem.parentNode.removeChild(this.innerPageElem), delete this.innerPageElem, delete this.currentLoading, delete this.loadHasStarted, this._linksTurnedOn = !1, this._imagesTurnedOn = !1, this._svgFontsFixed = !1 } } display(e, t) { if ((!this.displayOn || this.displayDirty) && (this.displayOn = !0, !this.currentlyLoading)) { if (!this.innerPageElem) return this.loadHasStarted ? void 0 : e ? void this.load() : void 0; this.displayDirty = !1, t || (this._linksTurnedOn || this.turnOnLinks(), this._imagesTurnedOn || this.docManager.lazyImageObserver || this.turnOnImages(), this._svgFontsFixed || this.fixSVGFonts()), this.loadFonts(), this._innerPageVisible || (this.containerElem.className = this.containerElem.className.replace(/placeholder|not_visible/g, ""), this._innerPageVisible = !0, t || (this.innerPageElem.style.display = "block")) } } hide() { (this.displayOn || this.displayDirty) && (this.displayOn = !1, this.innerPageElem && (this.displayDirty = !1, this.containerElem.className = this.containerElem.className + " not_visible", this._innerPageVisible = !1)) } setLoadFontGroup(e) { e.addPage(this), this.loadFontGroup = e } loadFonts() { this.loadFontGroup.load() } _setZoomScale(e) { const t = this.innerPageElem, i = `scale(${e})`; t.style.transform !== i && (t.style.transform = i, t.style.transformOrigin = "top left") } _fitContentsToWidth() { if (this._targetWidth && this.innerPageElem) { const e = this._targetWidth / this.origWidth; this._setZoomScale(e) } } setWidth(e) { const t = Math.ceil(e / this.origWidth * this.origHeight); this._targetWidth !== e && (this.containerElem.style.width = e + "px", this._targetWidth = e), this._targetHeight !== t && (this.containerElem.style.height = t + "px", this._targetHeight = t), this._fitContentsToWidth() } setBounds(e, t) { this.origWidth / this.origHeight > e / t ? t = Math.ceil(e / this.origWidth * this.origHeight) : e = Math.ceil(t / this.origHeight * this.origWidth), this._targetWidth !== e && (this.containerElem.style.width = e + "px", this._targetWidth = e), this._targetHeight !== t && (this.containerElem.style.height = t + "px", this._targetHeight = t), this._fitContentsToWidth() } turnOnImages() { if (!this.innerPageElem) throw Error("Can't turn on images for a page that's not loaded"); if (this._imagesTurnedOn) throw Error("Images have already been turned on for this document"); this._imagesTurnedOn = !0; const e = this.innerPageElem.getElementsByTagName("img"); for (let t = 0; t < e.length; t++)this.docManager.lazyLoad(e[t]) } turnOnLinks() { if (!this.innerPageElem) throw Error("Can't turn on links for a page that's not loaded"); if (this._linksTurnedOn) throw Error("Links have already been turned on for this document"); this._linksTurnedOn = !0; const e = this.docManager, t = function (t) { return function () { e.gotoPage(t.substring(4)) } }, i = this.innerPageElem.getElementsByTagName("a"); for (let e = 0; e < i.length; e++) { const s = i[e]; if (s.className.toLowerCase().search("ll") > -1 && !s.href) { const e = s.getAttribute("orig"); if (e) { let i = V.decode(e).replace(/^j[\W]*a[\W]*v[\W]*a[\W]*s[\W]*c[\W]*r[\W]*i[\W]*p[\W]*t[\W]*:|^f[\W]*i[\W]*l[\W]*e[\W]*:/gi, ""); i.search(/^page/) > -1 ? s.onclick = t(i) : (i.search(/^(http|ftp)/) < 0 && (i = "http://" + i), s.target = "_blank", O(s, i), s.rel = "nofollow Scribd") } } } } } i(z, "_defaultParams", { containerElem: null, innerPageElem: null, contentUrl: null, origWidth: null, origHeight: null, fonts: null, docManager: null, pageNum: null }), i(z, "_requiredParams", ["origWidth", "origHeight", "fonts", "docManager", "containerElem", "pageNum"]); const j = "blurred_page", D = function (e) { e.preventDefault() }; class Q extends N { constructor(e, t, i) { super(Q.EVENT_NAMES), this.options = i || {}, this.options.extrasWidth = this.options.extrasWidth || window.extrasWidth, this.defaultViewMode = e || "scroll", this.mobile = t || !1, this.callbacks_ready = !1, this.callbacks = [], this.pages = {}, this._pageWidths = null, this.options.hasWoffFonts ? (this._fontLoader = new A(this), this.adjacentFontLoadPages = 1) : (this._fontLoader = new B(this), this.adjacentFontLoadPages = 8), this.viewManagers = { scroll: new R, slideshow: new T }, this.viewportManager = new I, this._currentFontAggregatorHostIdx = 0, this.visiblePages = [], this.firstVisiblePage = null, this.lastVisiblePage = null, this.firstHiddenPageNum = null, this.truncateDocument = window.__truncate_document || !1, this.currentFontGroup = new H(0, this._fontLoader), this.isScrolling = !1, this._scrollingCount = 0, "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype && "isIntersecting" in window.IntersectionObserverEntry.prototype && this.setupLazyImageObserver() } setupLazyImageObserver() { this.lazyImageObserver = new IntersectionObserver((e => { e.forEach((e => { e.isIntersecting && this.lazyLoad(e.target) })) })) } lazyLoad(e) { e.className.toLowerCase().search("absimg") > -1 && !e.src && (e.src = this.subImageSrc(e.getAttribute("orig")), e.removeAttribute("orig"), e.style.display = "block", this.lazyImageObserver && this.lazyImageObserver.unobserve(e)) } observeImages(e) { if (!this.lazyImageObserver || !this.lazyImageObserver.observe) return; const t = e.getElementsByTagName("img"); for (let e = 0; e < t.length; e++)t[e].className.toLowerCase().search("absimg") > -1 && this.lazyImageObserver.observe(t[e]) } loadImages(e) { const t = e.getElementsByTagName("img"); for (let e = 0; e < t.length; e++)this.lazyLoad(t[e]) } registerCallback(e) { this.callbacks_ready ? e.call(this) : this.callbacks.push(e) } executeCallbacks() { this.callbacks_ready = !0, this.callbacks.forEach((e => { e.call(this) })) } disableRestorePosition() { this.viewManagers.scroll._disableRestorePosition = !0 } _fireZoomed(e) { this.fireEvent("zoomed", e) } nextFontAggregatorHost() { return this._currentFontAggregatorHostIdx = (this._currentFontAggregatorHostIdx + 1) % this.fontAggregatorHosts.length, this.fontAggregatorHosts[this._currentFontAggregatorHostIdx] } _fireHideExtras() { this.fireEvent("hideExtras") } _fireShowExtras() { this.fireEvent("showExtras") } currentPageNum() { return this._expectedFirstPageNum } setupTestElements() { this._fontLoader.setupTestElements() } pageCount() { if (Object.prototype.hasOwnProperty.call(this, "_pageCount")) return this._pageCount; let e = 0; for (const t in this.pages) Object.prototype.hasOwnProperty.call(this.pages, t) && e++; return this._pageCount = e, this._pageCount } truncatedPagesString() { return `${this.firstHiddenPageNum}-${this.originalPageCount}` } setupPaidDocument(e, t) { this.allowedPages = e, this.originalPageCount = t, this._allowedPagesHash = [], this._maximumAllowedPage = Math.max.apply(null, this.allowedPages), this._minimumAllowedPage = Math.min.apply(null, this.allowedPages), this._isPaidDocument = !0, this._pageMissingElements = []; for (let t = 0; t < e.length; t++)this._allowedPagesHash[e[t]] = !0, (t > 0 && e[t] > e[t - 1] + 1 || 0 === t && 1 !== e[t]) && this._pageMissingElements.push("page_missing_explanation_" + e[t].toString()); this._maximumAllowedPage !== this.originalPageCount && this._pageMissingElements.push("page_missing_explanation_" + (this.originalPageCount + 1).toString()) } minimumPageNumber() { return "book" === this.viewMode() ? 0 : 1 } maximumPageNumber() { return this.allowedPages ? this.originalPageCount : this.pageCount() } getClosestPageNumber(e, t) { if (!this.allowedPages) return e; if (this._allowedPagesHash[e]) return e; if (e >= this._maximumAllowedPage) return this._maximumAllowedPage; if (e <= this._minimumAllowedPage) return this._minimumAllowedPage; for (let i = 1; i <= this.originalPageCount; i++) { if (t <= 0 && !0 === this._allowedPagesHash[e - i]) return e - i; if (t >= 0 && e + i < this.originalPageCount && !0 === this._allowedPagesHash[e + i]) return e + i } } setPageMissingModulesVisible(e) { if (this._isPaidDocument) for (let t = 0; t < this._pageMissingElements.length; t++) { const i = document.getElementById(this._pageMissingElements[t]); i && (this.truncateDocument ? i.remove() : i.style.display = e ? "block" : "none") } } getNextAvailablePage(e) { return this.getClosestPageNumber(e, 1) } getPreviousAvailablePage(e) { return this.getClosestPageNumber(e, -1) } flushFontQueue() { this._fontLoader.flushFontQueue() } visiblePagesChanged() { const e = []; for (const t in this.pages) if (Object.prototype.hasOwnProperty.call(this.pages, t)) { const i = this.pages[t]; i.isVisible && e.push(i) } if (!e.length) return; e.sort((function (e, t) { return e.pageNum < t.pageNum ? -1 : 1 })), this.fireEvent("visiblePagesChanged", e), this.visiblePages = e; const t = this.firstVisiblePage; this.firstVisiblePage = e.length > 0 ? e[0] : null, this.lastVisiblePage = e.length > 0 ? e[e.length - 1] : null, this.isScrolling || (this._loadAdjacentFonts(), this._loadAdjacentPages()), (this.firstVisiblePage === t || this.firstVisiblePage && t) && this.firstVisiblePage.pageNum === t.pageNum || !this.isScrolling && this.firstVisiblePage && this._updateExpectedFirstPage(this.firstVisiblePage.pageNum), this.scheduleLogPageView() } constrain(e, t, i) { return Math.min(i, Math.max(t, e)) } boundingRatioForPage(e) { const t = this.viewportManager.viewRect, i = e.boundingRect, s = i.bottom - i.top, n = i.right - i.left; return { left: (t.left - i.left) / n, right: (t.right - i.right) / n + 1, top: this.constrain((t.top - i.top) / s + e.pageNum, e.pageNum, e.pageNum + 1), bottom: this.constrain((t.bottom - i.bottom) / s + e.pageNum + 1, e.pageNum, e.pageNum + 1) } } scheduleLogPageView() { this.logPageViewTimout && window.clearTimeout(this.logPageViewTimout), this.logPageViewTimout = window.setTimeout((() => { this.logPageView(), this.logPageViewTimout = null }), 1e3) } _floor2(e) { return Math.floor(100 * e) / 100 } getVisibleBBox() { const e = {}; if (this.firstVisiblePage) { const t = this.boundingRatioForPage(this.firstVisiblePage); e.left = t.left, e.right = t.right, e.top = t.top } if (this.lastVisiblePage) { const t = this.boundingRatioForPage(this.lastVisiblePage); e.bottom = t.bottom } return e } logPageView() { const e = this.getVisibleBBox(); for (const t in e) Object.prototype.hasOwnProperty.call(e, t) && (e[t] = this._floor2(e[t])); const t = [[e.left, e.top], [e.right, e.bottom]]; return this.fireEvent("pageView", t), e } _updateExpectedFirstPage(e) { this._expectedFirstPageNum = e, this.fireEvent("expectedFirstPageChanged", this._expectedFirstPageNum) } _loadAdjacentFonts() { if (this.firstVisiblePage && this.lastVisiblePage) { const e = this.firstVisiblePage.pageNum - this.adjacentFontLoadPages, t = this.lastVisiblePage.pageNum + this.adjacentFontLoadPages; for (let i = e; i <= t; i++) { const e = this.pages[i]; e && e.loadFonts() } } } _loadAdjacentPages() { if (this.firstVisiblePage && this.lastVisiblePage) { const e = this.firstVisiblePage.pageNum - 3, t = this.lastVisiblePage.pageNum + 3; for (let i = e; i <= t; i++) { const e = this.pages[i]; e && !e.loadHasStarted && (e.load(), this.mobile && e.setWidth(this._pageWidths)) } this.mobile && this._removeUnusedPages() } } _removeUnusedPages() { const e = this.firstVisiblePage.pageNum - 3, t = this.lastVisiblePage.pageNum + 3, i = this.pages; let s = 4; for (; i[s];)(s < e || s > t) && i[s].remove(), s++ } _updatePageBoundingRects() { for (const e in this.pages) Object.prototype.hasOwnProperty.call(this.pages, e) && this.pages[e]._updateBoundingRect() } removeInsteadOfBlurring(e) { return !!(this.truncateDocument && this.firstHiddenPageNum && e.pageNum >= this.firstHiddenPageNum) || (!!Q.disablePageBlur || "undefined" == typeof Scribd) } addPage(e) { if (!this.firstHiddenPageNum && e.blur && (this.firstHiddenPageNum = e.pageNum), !this.removeInsteadOfBlurring(e)) { if (void 0 === e.pageNum) throw Error("must have pageNum param"); if (e.docManager = this, e.innerPageElem) { const t = e.innerPageElem.querySelectorAll(".absimg"); for (let i = 0; i < t.length; i++)1 === e.pageNum ? this.lazyLoad(t[i]) : t[i].style.display = "block" } const t = new z(e); return this.pages[e.pageNum] = t, this._pageWidths && t.setWidth(this._pageWidths), this.currentFontGroup.isFull() && (this.currentFontGroup = this.currentFontGroup.newNextGroup()), t.setLoadFontGroup(this.currentFontGroup), t } e.containerElem.parentNode.removeChild(e.containerElem) } setIsScrolling(e) { e ? this._scrollingCount += 1 : this._scrollingCount -= 1, this._scrollingCount < 0 && (this._scrollingCount = 0), 0 === this._scrollingCount ? this.isScrolling = !1 : this.isScrolling = !0 } setViewManager(e, t) { this._currentViewManager ? (this._setViewManager(e), "function" == typeof t && t()) : this.addEvent("viewmodeInitialized", (() => { this.setViewManager(e, t) })) } _setViewManager(e, t) { t || this._currentViewManager.unregister(); const i = this._currentViewManager; this._currentViewManager = this.viewManagers[e], this._currentViewManager.register(this, this.viewportManager), this.fireEvent("viewmodeChanged", this.viewMode(), i ? i.name() : null) } setInitialViewManager(e) { if (this._currentViewManager) throw Error("This should be called before any view manager exists"); this._setViewManager(e, !0), this.fireEvent("viewmodeInitialized", this.viewMode(), null) } setDefaultWidth(e) { this._currentViewManager._currentPageWidth = e, this._currentViewManager._currentZoomMultiplier = 1, this._currentViewManager._updatePageWidths() } subImageSrc(e) { if (!this._imageDomainSubstitutionList || 0 === this._imageDomainSubstitutionList.length) return; const t = this._imageDomainSubstitutionList[0]; return e.replace(this._imageDomainSubstitutionFrom, t) } allPagesAdded() { if (this._allPagesAddedCalled) throw Error("can only call allPagesAdded once"); this.viewportManager.enable(), this._updatePageBoundingRects(), this.setInitialViewManager(this.defaultViewMode), this.fireEvent("allPagesAdded") } setEmbeddedDoc(e) { this._isEmbed = "True" === e } setPageWidths(e) { this._pageWidths = e; for (const e in this.pages) Object.prototype.hasOwnProperty.call(this.pages, e) && this.pages[e].setWidth(this._pageWidths); this._updatePageBoundingRects() } addFont(e, t, i, s, n, r) { this._fontLoader.addFont(e, t, i, s, n, r) } initStyles() { this._fontLoader.initStyles() } gotoPage(e, t) { const i = !(e % 1 == 0); let s = null; if (i && (s = +(e % 1).toFixed(2), e = Math.floor(e)), e < this.minimumPageNumber() || e > this.maximumPageNumber()) return; t || (t = {}), i && void 0 === t.frac && (t.frac = s); const n = t.direction || 0; let r = this.pages[e]; void 0 === r && this._isPaidDocument && (e = this.getClosestPageNumber(e, n), r = this.pages[e]), this.mobile && this.pages[e] && this.pages[e].setWidth(this._pageWidths), this._updateExpectedFirstPage(e), this._currentViewManager.gotoPage(this._expectedFirstPageNum, t) } gotoPreviousPage() { const e = this._currentViewManager._pagingStep(); this._currentViewManager.isTopPageInView() ? this.gotoPage(this._expectedFirstPageNum - e, { direction: -1 }) : this.gotoPage(this._expectedFirstPageNum, { direction: -1 }) } gotoNextPage() { const e = this._currentViewManager._pagingStep(); this.gotoPage(this._expectedFirstPageNum + e, { direction: 1 }) } enterFullscreen() { this._currentViewManager.enterFullscreen() } exitFullscreen() { this._currentViewManager.exitFullscreen() } isFullscreen() { return this._currentViewManager.isFullscreen } _fireEnteredFullscreen() { this.fireEvent("enteredFullscreen") } _fireExitedFullscreen() { this.fireEvent("exitedFullscreen") } viewMode() { return this._currentViewManager ? this._currentViewManager.name() : null } zoom(e) { this._currentViewManager.zoom(e) } resetZoom() { this._currentViewManager.resetZoom() } setImageDomainSubstitution(e, t) { this._imageDomainSubstitutionFrom = e, this._imageDomainSubstitutionList = t } disableViewManagerResizeWidth() { L.prototype._setBodyWidth = function () { } } disable() { this.disabled || (this.disabled = !0, this.viewportManager.disable()) } disableCopyPasteOnPage(e) { ["dragstart, selectstart, contextmenu"].forEach((function (t) { e.addEventListener(t, D) })), e.setAttribute("unselectable", "on"), e.querySelectorAll("*").forEach((function (e) { e.setAttribute("unselectable", "on") })) } enableCopyPasteOnPage(e) { ["dragstart, selectstart, contextmenu"].forEach((function (t) { e.removeEventListener(t, D) })), e.removeAttribute("unselectable"), e.querySelectorAll("*").forEach((function (e) { e.removeAttribute("unselectable") })) } doDynamicBlurring(e) { if (this.removeInsteadOfBlurring() || this.__blursRemoved) return; const t = document.getElementById(e); this.disableCopyPasteOnPage(t), t.classList.add(j); const i = () => { const i = document.createElement("div"); i.classList.add("promo_div"), t.appendChild(i); window.renderPageBlur({ pageId: e, promoDivElement: i, reblurPages: t => this.addBlurringToPageChunk(e, t), renderOverlay: () => this.createBlurOverlay(t), shouldUseOverlay: () => 0 === t.querySelectorAll(".text_layer, .image_layer").length, unblurPages: t => this.removeBlurringForPageChunk(e, t) }) }; window.__app_loaded ? i() : window.__pages_to_blur.push(i) } createBlurOverlay(e) { e.querySelectorAll(".text_layer").forEach((e => { e.dataset.initialTextShadow = e.style.textShadow, e.dataset.initialColor = e.style.color, e.style.textShadow = "0px 0px 70px black", e.style.color = "transparent" })), e.querySelectorAll(".text_layer [style]").forEach((e => { e.dataset.initialColor = e.style.color, e.style.color = "transparent" })), e.querySelectorAll(".image_layer img").forEach((e => { e.dataset.initialOpacity = e.style.opacity, e.style.opacity = .04 })) } removeBlurring() { C("test", { action: "doc_manager:remove_blurring", page: "doc_page" }); const e = Array.from(document.querySelectorAll(`.${j}`)); this.__blursRemoved = !0, e.forEach((e => this.removeBlurringForPage(e))) } removeBlurringForPageChunk(e, t) { this.getPageChunk(e, t).forEach((e => this.removeBlurringForPage(e))) } removeBlurringForPage(e) { e.classList.remove(j); const t = e.querySelector(".promo_div"); t && t.remove(), e.querySelectorAll(".text_layer").forEach((function (e) { e.style.textShadow = e.dataset.initialTextShadow, e.style.color = e.dataset.initialColor })), e.querySelectorAll(".text_layer [style]").forEach((function (e) { e.style.color = e.dataset.initialColor })), e.querySelectorAll(".image_layer img").forEach((function (e) { e.style.opacity = e.dataset.initialOpacity })), this.enableCopyPasteOnPage(e) } getPageChunk(e, t) { const i = Array.from(document.querySelectorAll(".outer_page")), s = i.findIndex((t => t.id === e)); return i.slice(s, s + t) } addBlurringToPageChunk(e, t) { this.getPageChunk(e, t).forEach((e => { this.doDynamicBlurring(e.id) })) } setJQuery() { console.info("DocumentManager.setJQuery is deprecated. jQuery is no longer a dependency.") } } return i(Q, "EVENT_NAMES", ["expectedFirstPageChanged", "viewmodeChanged", "enteredFullscreen", "exitedFullscreen", "hideExtras", "showExtras", "zoomed", "pageHide", "pageLoaded", "allPagesAdded", "pageView", "visiblePagesChanged", "viewmodeInitialized"]), Q }();
+    </script>
+    <script src="https://js.stripe.com/v3/" async=""></script><!-- Thank you for choosing Sonic -->
+    <title>Scribd</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-param" content="authenticity_token">
+
+    <meta property="og:site_name" content="Scribd">
+    <meta property="og:title" content="Scribd">
+    <meta property="fb:app_id" content="136494494209">
+    <meta name="yandex-verification" content="0ed66f497fbf9765">
+    <meta name="naver-site-verification" content="8a1986b0a4079515076ba34125d27de19b41887c">
+    <meta name="google-site-verification" content="GynhMUSITpW_pWiKif7wsGGlMOFA2TYQKkvOAqu-qiM">
+    <meta name="google-signin-client_id"
+        content="491264573595-hs5hu9ijbfl9g6khnkn2retrfr6lcua7.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <link rel="alternate" hreflang="x-default" href="https://www.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="en" href="https://www.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="es" href="https://es.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="pt" href="https://pt.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="fr" href="https://fr.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="id" href="https://id.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="de" href="https://de.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="it" href="https://it.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="ru" href="https://ru.scribd.com/embeds/690660636/content">
+    <link rel="alternate" hreflang="ro" href="https://ro.scribd.com/embeds/690660636/content">
+    <link rel="icon" href="https://s-f.scribdassets.com/scribd_rebrand.ico?c53491c70?v=5" type="image/x-icon">
+    <link rel="search" href="https://www.scribd.com/opensearch.xml" type="application/opensearchdescription+xml"
+        title="Search Scribd">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/1535.1b07cb1f4c46036c1776.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/3263.d779a02060edd83341a0.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/7989.f43bc5b0b61ed7fa3fc0.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/6799.c1e459f505986275ec2a.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/1020.2317e7fab4b7883a4f42.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/1155.c0b96edb6a26e27ee4e1.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/2787.f7cf13dcb2a9be48de6e.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/2077.49e477ba7bad80605de5.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/3977.ef46a1c31ad775606917.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/1074.41cd54b0d75bd1ed2037.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/2410.f6f12ccce6d9063c53ec.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/5586.ee9d2ed117a53286ee04.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/3688.6b078abfacff7c293819.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/3781.905ac3fa9c91f95bd9f1.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/7624.29c8b525f3e100c0d39e.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/3106.31d6cfe0d16ae931b73c.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/7853.bd5cfb0889fdce841fab.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://s-f.scribdassets.com/webpack/monolith/5290.3060b9be84b5bda08c35.css">
+    <script type="text/javascript" src="/options/exposed_to_client.js"></script>
+    <script type="text/javascript">window.require = function (x) { }; window.Scribd = window.Scribd || {}; window.Scribd.translations = window.Scribd.translations || []; Scribd.rails_env = "production"; Scribd.current_ca = "current_ca:DvQs2z1jjE9NxCK2uzcsuA==-pdoCm7QODK6ffSOhtieMfEIu4RI="; Scribd.is_mobile = false; Scribd.is_bot = false; Scribd.root_url = "https://www.scribd.com/"; Scribd.asset_host = "https://s-f.scribdassets.com"; Scribd.data = {}; Scribd.e2e_enabled = false;
+        Scribd.data.accountCreation = { "ariaLabel": "Download by signing up or logging in", "e2eEnabled": false, "facebook": { "appID": "136494494209", "permissions": "email,public_profile", "sessionPath": "/facebook_session" }, "google": { "clientId": "491264573595-hs5hu9ijbfl9g6khnkn2retrfr6lcua7.apps.googleusercontent.com", "sessionPath": "/open_id_connect/login" }, "inEU": false, "language": "en", "paths": { "accountSettingsAddMissingEmail": "/account-settings/add-missing-email", "accountSettingsPath": "/your-account", "forgotPassword": "/password/forgot", "login": "/login", "signUp": "/login/signup", "privacy": "/privacy", "terms": "/terms", "subscribe": "" }, "reCaptchaEnabled": true, "reCaptchaSiteKey": "6LeImq4UAAAAAAvTbjthwoOw2rtOwrfjXZbDxujw", "userCountry": "" };
+
+        window.addEventListener('DOMContentLoaded', function () {
+            Scribd.data.deferredLocationData = $.get("/login/location");
+        });
+    </script>
+    <script src="https://s-f.scribdassets.com/javascripts/jquery-3.7.1.min.js?c53491c70"
+        data-osano="ESSENTIAL"></script>
+
+    <script src="https://s-f.scribdassets.com/webpack/vendors/react16/react16.3f6f5707824dc67be900.dll.js"
+        data-osano="ESSENTIAL"></script>
+    <script type="text/javascript">
+        window.i18next_lng = "en-US";
+        window.i18next_fallback = "en-US";
+        window.i18next_debug = "false";
+    </script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6338.1293a297277020087e2f.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3281.adb8398b3913f88c26d7.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/4775.ce7db43a3702f7a9b3d9.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6657.89c07c8ac2ba0006cf30.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3264.feb0f7afffdae363fa23.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5973.c971097ef194666aa02d.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6003.9cc914998aa830257aec.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5250.2bee2b249c5e1838ebff.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/2356.f9a28d7a60e2c5693d91.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/933.05ab20ace8e02929dae5.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/7583.1251037e6f20a324cee6.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/7719.a1d14ccaf0fc29d2838a.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/1769.a8b034880a3162b72220.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/2375.1d1a670e40d1b979b23c.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/253.9bdf91e0d3daed2758fb.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3485.7d88cb2aba9d61c6cc65.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/9164.65f67927ed05967c02ae.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3772.bf7c436b201cf4ed07a4.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/1428.b242ef1f59ea94617009.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/4583.6179335b9423d1d2144a.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3099.dfce0333390394984add.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/8267.eb4565976c443f6cf871.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6629.54bb3f8e0c42ba348f71.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/4715.34905c35f68febed216d.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/7015.81e8a7fef0105c309637.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3664.a5d0b993f6edf5286ae3.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6090.6df49a23969a8e5456e0.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3589.f1224269e9f804522379.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/9143.0d91c1c8ab5ced703b5d.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3853.5cd36c5c4539e307e5c4.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/7844.6067656d0da0602e020d.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6498.68274715ca33d1db6ae3.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/4940.73b343d5aa3fe40d0bdf.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/1292.248888d73a5de88e52f0.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/166.7a2d7650774c152c15b1.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3952.3e055d1a5f6618ee793b.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3541.3c40872e40d2e969cef3.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/7758.f950509312ecdac031fd.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/4371.ed93185d396a527657f9.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5914.2cb1d2a83a132d0402ee.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/2410.af7f768108d7867f63b4.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/8082.c2413e5ef78d9705e67b.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5586.39f42933d7538b5742c1.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3622.ef7b052aa2e834953193.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/1827.2cd7c4555f10205d76d7.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/3270.661af4bd42c6bfe6e5a2.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5425.d6aec37f70b6b365eeae.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/2072.d64a0ccae08a6752fe4a.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/2422.e76598c3bd23cab4f45b.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5264.7ca6044a3cb26f3dbe0e.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/9195.d44209bb9a32b1d6f475.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/8826.c0610cc48db1006793d6.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6292.bc0ccd452b0182bdcdb6.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/9203.8d87bd810d23f929e5f8.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/4620.626df3004827a209a206.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/119.ba9793042e5fd8ff4289.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/2817.60b9bcf96c3d376b19fc.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6870.ae86ecd20fcf97fb3ed0.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/8702.e8a35d55cb1cee0e304f.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/5401.f0d3ffc9cf7a35f27c71.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6506.1571130e55244860b4a8.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/238.5b9e8bef4f35d9ef0463.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/embeds_new~9bd77f73.3820482ffe408a3f0cf4.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/embeds_new~44cc5afb.3c508ea61d0f4ef091fa.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/embeds_new~bde52cb3.52d392aee0a11c45668b.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://browser.sentry-cdn.com/7.19.0/bundle.min.js" crossorigin="anonymous"
+        integrity="sha384-ztBHD5Kyf+YJqkbZijnUhyS5dYdQDCEfB2QjYao1rVJ1qBpQn+WMbafstDcVTHnB" id="sentry_script_tag"
+        async=""></script>
+    <script src="https://cdn.optimizely.com/js/24721610109.js" defer=""></script>
+    <script src="https://s-f.scribdassets.com/webpack/vendors/react16/react16.3f6f5707824dc67be900.dll.js"
+        data-osano="ESSENTIAL"></script>
+    <script type="text/javascript">
+        window.i18next_lng = "en-US";
+        window.i18next_fallback = "en-US";
+        window.i18next_debug = "false";
+    </script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/6338.1293a297277020087e2f.js"
+        data-osano="ESSENTIAL"></script>
+    <script src="https://s-f.scribdassets.com/webpack/monolith/nova_styles_scribd2025.2a4fc6b8e5c3adf5fd3c.js"
+        data-osano="ESSENTIAL"></script>
+    <script>
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+        ga('create', "UA-443684-4", 'auto');
+        ga('send', 'pageview');
+        ga('set', 'dimension1', 'false');
+        ga('set', 'dimension3', document.location.host);
+    </script>
+    <script type="text/javascript">
+        Scribd.download_document = {
+            register_download_attempt_path: "/document_downloads/register_download_attempt",
+            download_dialog_path: "/read/download_dialog",
+            request_document_for_download_path: "/document_downloads/request_document_for_download",
+            oauthSignupUrl: "https://www.scribd.com/oauth/signup"
+        };
+    </script>
+    <script type="text/javascript">
+        Scribd.logged_in = false;
+        Scribd.current_user = null;
+        Scribd.archive_login_url = "https://www.scribd.com/archive/login";
+        Scribd.google_auth_web_client_id = "491264573595-hs5hu9ijbfl9g6khnkn2retrfr6lcua7.apps.googleusercontent.com";
+        Scribd.browser_uuid = "5891e3f1-2bf4-46dd-a4ab-7f0a4493f327";
+        Scribd.user_data = {};
+    </script>
+    <script type="text/javascript">
+        Scribd.current_doc = {};
+        Scribd.root_url = "https://www.scribd.com/";
+    </script>
+    <script type="text/javascript">
+        window['$rat'] = ratInit(["https://rs1.scribd.com/", "https://rs2.scribd.com/", "https://rs3.scribd.com/", "https://rs4.scribd.com/", "https://rs5.scribd.com/", "https://rs6.scribd.com/", "https://rs7.scribd.com/", "https://rs8.scribd.com/"], { "user_id": null, "doc_id": 690660636 }, true);
+        $rat.root().withVid(function (vid) { $rat("gotvid", { vid: vid }) })
+    </script>
+    <script type="text/javascript">
+        window.webAnalytics = webAnalyticsInit("https://wa.scribd.com", { "user_id": null, "doc_id": 690660636, "brand": null }, 100);
+    </script>
+    <script type="text/javascript">Scribd.tracker = new Scribd.Tracker(document);</script>
+    <script defer=""
+        type="application/javascript">if (typeof window.crossOriginIsolated !== "undefined" && !crossOriginIsolated) SharedArrayBuffer = ArrayBuffer;</script>
+    <script src="https://browser.sentry-cdn.com/7.19.0/rewriteframes.min.js" crossorigin="anonymous"
+        id="sentry_rewriteframe_script_tag" async=""></script>
+    <style>
+        div.ff0 span {
+            font-family: ff0, Comic Sans MS, Comic Sans MS5, cursive;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        div.ff1 span {
+            font-family: ff1, Comic Sans MS, Comic Sans MS5, cursive;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        div.ff2 span {
+            font-family: ff2, Verdana, Verdana, Geneva, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        div.ff3 span {
+            font-family: ff3, Trebuchet MS1, Helvetica, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        div.ff4 span {
+            font-family: ff4, Comic Sans MS, Comic Sans MS5, cursive;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        div.ff5 span {
+            font-family: ff5, Arial, Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .ff0,
+        .ff1,
+        .ff2,
+        .ff3,
+        .ff4,
+        .ff5 {
+            display: none;
+        }
+    </style>
+    <style>
+        .ff0,
+        .ff1,
+        .ff2,
+        .ff3,
+        .ff4,
+        .ff5 {
+            display: unset;
+        }
+    </style>
+    <style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">
+        .fb_hidden {
+            position: absolute;
+            top: -10000px;
+            z-index: 10001
+        }
+
+        .fb_reposition {
+            overflow: hidden;
+            position: relative
+        }
+
+        .fb_invisible {
+            display: none
+        }
+
+        .fb_reset {
+            background: none;
+            border: 0px;
+            border-spacing: 0;
+            color: #000;
+            cursor: auto;
+            direction: ltr;
+            font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal
+        }
+
+        .fb_reset>div {
+            overflow: hidden
+        }
+
+        @keyframes fb_transform {
+            from {
+                opacity: 0;
+                transform: scale(.95)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        .fb_animate {
+            animation: fb_transform .3s forwards
+        }
+
+        .fb_dialog {
+            background: rgba(82, 82, 82, .7);
+            position: absolute;
+            top: -10000px;
+            z-index: 10001
+        }
+
+        .fb_dialog_advanced {
+            border-radius: 8px;
+            padding: 10px
+        }
+
+        .fb_dialog_content {
+            background: #fff;
+            color: #373737
+        }
+
+        .fb_dialog_close_icon {
+            background: url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            position: absolute;
+            right: 18px;
+            top: 17px;
+            width: 15px
+        }
+
+        .fb_dialog_mobile .fb_dialog_close_icon {
+            left: 5px;
+            right: auto;
+            top: 5px
+        }
+
+        .fb_dialog_padding {
+            background-color: transparent;
+            position: absolute;
+            width: 1px;
+            z-index: -1
+        }
+
+        .fb_dialog_close_icon:hover {
+            background: url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+        }
+
+        .fb_dialog_close_icon:active {
+            background: url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+        }
+
+        .fb_dialog_iframe {
+            line-height: 0
+        }
+
+        .fb_dialog_content .dialog_title {
+            background: #6d84b4;
+            border: 1px solid #365899;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0
+        }
+
+        .fb_dialog_content .dialog_title>span {
+            background: url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+            float: left;
+            padding: 5px 0 7px 26px
+        }
+
+        body.fb_hidden {
+            height: 100%;
+            left: 0px;
+            margin: 0px;
+            overflow: visible;
+            position: absolute;
+            top: -10000px;
+            transform: none;
+            width: 100%
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading {
+            background: url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+            min-height: 100%;
+            min-width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 10001
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered {
+            background: none;
+            height: auto;
+            min-height: initial;
+            min-width: initial;
+            width: auto
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+            width: 100%
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+            background: none
+        }
+
+        .loading.centered #fb_dialog_loader_close {
+            clear: both;
+            color: white;
+            display: block;
+            font-size: 18px;
+            padding-top: 20px
+        }
+
+        #fb-root #fb_dialog_ipad_overlay {
+            background: rgba(0, 0, 0, .4);
+            bottom: 0;
+            left: 0;
+            min-height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 10000
+        }
+
+        #fb-root #fb_dialog_ipad_overlay.hidden {
+            display: none
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading iframe {
+            visibility: hidden
+        }
+
+        .fb_dialog_mobile .fb_dialog_iframe {
+            position: sticky;
+            top: 0
+        }
+
+        .fb_dialog_content .dialog_header {
+            background: linear-gradient(from(#738aba), to(#2c4987));
+            border-bottom: 1px solid;
+            border-color: #043b87;
+            color: #fff;
+            font: bold 14px Helvetica, sans-serif;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 30, 84, .296875) 0px -1px 0px;
+            vertical-align: middle;
+            white-space: nowrap
+        }
+
+        .fb_dialog_content .dialog_header table {
+            height: 43px;
+            width: 100%
+        }
+
+        .fb_dialog_content .dialog_header td.header_left {
+            font-size: 12px;
+            padding-left: 5px;
+            vertical-align: middle;
+            width: 60px
+        }
+
+        .fb_dialog_content .dialog_header td.header_right {
+            font-size: 12px;
+            padding-right: 5px;
+            vertical-align: middle;
+            width: 60px
+        }
+
+        .fb_dialog_content .touchable_button {
+            background: linear-gradient(from(#4267b2), to(#2a4887));
+            background-clip: padding-box;
+            border: 1px solid #29487d;
+            border-radius: 3px;
+            display: inline-block;
+            line-height: 18px;
+            margin-top: 3px;
+            max-width: 85px;
+            padding: 4px 12px;
+            position: relative
+        }
+
+        .fb_dialog_content .dialog_header .touchable_button input {
+            background: none;
+            border: none;
+            color: white;
+            font: bold 12px Helvetica, sans-serif;
+            margin: 2px -12px;
+            padding: 2px 6px 3px 6px;
+            text-shadow: rgba(0, 30, 84, .296875) 0px -1px 0px
+        }
+
+        .fb_dialog_content .dialog_header .header_center {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .fb_dialog_content .dialog_content {
+            background: url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+            border: 1px solid #4a4a4a;
+            border-bottom: 0;
+            border-top: 0;
+            height: 150px
+        }
+
+        .fb_dialog_content .dialog_footer {
+            background: #f5f6f7;
+            border: 1px solid #4a4a4a;
+            border-top-color: #ccc;
+            height: 40px
+        }
+
+        #fb_dialog_loader_close {
+            float: left
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+            visibility: hidden
+        }
+
+        #fb_dialog_loader_spinner {
+            animation: rotateSpinner 1.2s linear infinite;
+            background-color: transparent;
+            background-image: url(https://connect.facebook.net/rsrc.php/v4/yD/r/t-wz8gw1xG1.png);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            height: 24px;
+            width: 24px
+        }
+
+        @keyframes rotateSpinner {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        .fb_iframe_widget {
+            display: inline-block;
+            position: relative
+        }
+
+        .fb_iframe_widget span {
+            display: inline-block;
+            position: relative;
+            text-align: justify
+        }
+
+        .fb_iframe_widget iframe {
+            position: absolute
+        }
+
+        .fb_iframe_widget_fluid_desktop,
+        .fb_iframe_widget_fluid_desktop span,
+        .fb_iframe_widget_fluid_desktop iframe {
+            max-width: 100%
+        }
+
+        .fb_iframe_widget_fluid_desktop iframe {
+            min-width: 220px;
+            position: relative
+        }
+
+        .fb_iframe_widget_lift {
+            z-index: 1
+        }
+
+        .fb_iframe_widget_fluid {
+            display: inline
+        }
+
+        .fb_iframe_widget_fluid span {
+            width: 100%
+        }
+    </style>
+</head>
+
+<body
+    class="autogen_class_views_layouts_new_embed autogen_class_views_layouts_legacy_web autogen_class_views_layouts_web autogen_class_widgets_page autogen_class_widgets_base locale_en_US responsive body_container jsblock_done"
+    data-revision="c53491c70ca9e7c7e6d8923f10a1e41081c48574" data-new-gr-c-s-check-loaded="14.1232.0"
+    data-gr-ext-installed="">
+    <script defer=""
+        type="application/javascript">window.__initialState = JSON.parse("{\"__locale\":\"en-US\",\"__assetPath\":\"https://s-f.scribdassets.com/\"}");</script>
+    <div id="fb-root" class=" fb_reset">
+        <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js" async=""></script>
+        <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+            <div></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        Scribd.Facebook.setup()
+    </script>
+    <div class="auto__embeds_new_show autogen_class_widgets_base view_mode_scroll" id="autogen_id_185078160"
+        data-track_category="embeds">
+        <div class="document_scroller">
+            <div class="document_container">
+                <script
+                    type="text/javascript">DocumentManager.scrollParent = document.querySelector(".document_scroller")</script>
+                <script type="text/javascript">
+                    var defaultViewWidth = defaultViewWidth || 679;
+
+                    var docManager = new DocumentManager(
+                        "scroll",
+                        "web" == "mobile",
+                        { hasWoffFonts: true }
+                    );
+                    window.docManager = docManager;
+                    docManager.setEmbeddedDoc('True');
+                    docManager.fontAggregatorHosts = ["https://html.scribdassets.com"];
+                    docManager.assetPrefix = "8t5fko354wbrcvdg";
+
+                    docManager.addFont(3, "b", "ff3", "Trebuchet MS1, Helvetica, sans-serif", "bold", "normal");
+
+                    docManager.addFont(4, "", "ff4", "Comic Sans MS, Comic Sans MS5, cursive", "normal", "normal");
+
+                    docManager.addFont(5, "", "ff5", "Arial, Arial, Helvetica, sans-serif", "normal", "normal");
+
+                    docManager.addFont(0, "b", "ff0", "Comic Sans MS, Comic Sans MS5, cursive", "bold", "normal");
+
+                    docManager.addFont(1, "b", "ff1", "Comic Sans MS, Comic Sans MS5, cursive", "bold", "normal");
+
+                    docManager.addFont(2, "b", "ff2", "Verdana, Verdana, Geneva, sans-serif", "bold", "normal");
+
+                    docManager.displayType = "vector";
+
+                    docManager.initStyles();
+                    docManager.setPageWidths(defaultViewWidth);
+                    docManager.setImageDomainSubstitution(/http:\/\/html.scribd.com/, ["https://html.scribdassets.com"]);
+                </script>
+                <div id="font_preload_bed"
+                    style="position:absolute; height: 1px; left: 0; top:0; max-width: 100%; visibility: hidden; overflow: hidden">
+                </div>
+
+                <script type="text/javascript">
+                    docManager.setupTestElements();
+                </script>
+
+                <div role="document" tabindex="0" class="outer_page_container">
+
+                    <div id="capture_here" style="width: 679px; height: 1758px;">
+                        <div class="outer_page only_ie6_border " id="outer_page_1"
+                            style="width: 1000px; height: 1294px;">
+
+                            <div class="newpage" id="page1"
+                                style="width: 902px; height: 1167px; transform: scale(1.10865); transform-origin: left top;">
+                                <div class="text_layer" style="z-index:2">
+                                    <div class="ie_fix">
+                                        &nbsp;
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a" style="left:2193px;top:545px">Reçu</span>
+                                        </div>
+                                        <div class="ff1" style="font-size:146px">
+                                            <span class="a" style="left:1061px;top:678px">A</span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1061px;top:895px;word-spacing:9px;letter-spacing:-1px">Apple
+                                                Sainte-Catherine</span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a" style="left:1061px;top:976px;word-spacing:-1px">2-4 rue
+                                                Sainte-Catherine</span><span class="a"
+                                                style="left:1061px;top:1058px;word-spacing:-4px">33000
+                                                Bordeaux</span><span class="a"
+                                                style="left:1061px;top:1141px">http://www.apple.com/retail</span><span
+                                                class="a"
+                                                style="left:1061px;top:1223px;word-spacing:11px;letter-spacing:-1px">Numéro
+                                                TVA: FR21483209383</span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a" style="left:1061px;top:1832px;word-spacing:-4px">AirPods (3ᵉ
+                                                génération) avec Boîtier de <span class="w7"></span>charge
+                                                Lightning</span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a" style="left:1061px;top:1930px;word-spacing:-1px">N°
+                                                Référence:
+                                                MPNY3ZM/A</span><span class="a"
+                                                style="left:1061px;top:2012px;word-spacing:-1px">N° de Série:
+                                                TGCXD6Q1YP</span><span class="a"
+                                                style="left:1061px;top:2095px;word-spacing:-1px">Date Retour: 08 janv. ,
+                                                2023</span><span class="a"
+                                                style="left:1061px;top:2208px;word-spacing:-2px">Pour obtenir de l’aide
+                                                :
+                                                www.apple.com/fr/support</span><span class="a"
+                                                style="left:1061px;top:2402px;word-spacing:-2px">Dont éco-participation
+                                                0,02
+                                                €</span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1061px;top:2547px;word-spacing:-93px;letter-spacing:95px">P<span
+                                                    class="l" style="margin-left:-97px">r<span class="l"
+                                                        style="margin-left:-95px">i<span class="l"
+                                                            style="margin-left:-95px">x <span class="l"
+                                                                style="margin-left:-97px">U<span class="l"
+                                                                    style="margin-left:-95px">n<span class="l"
+                                                                        style="margin-left:-96px">i<span class="l"
+                                                                            style="margin-left:-95px">t<span class="l"
+                                                                                style="margin-left:-95px">a<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-95px">i<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-95px">r<span
+                                                                                            class="l"
+                                                                                            style="margin-left:-95px">e<span
+                                                                                                class="w"
+                                                                                                style="width:828px"></span>T<span
+                                                                                                class="l"
+                                                                                                style="margin-left:-94px">V<span
+                                                                                                    class="l"
+                                                                                                    style="margin-left:-99px">A<span
+                                                                                                        class="l"
+                                                                                                        style="margin-left:-96px">%<span
+                                                                                                            class="w"
+                                                                                                            style="width:798px"></span>Q<span
+                                                                                                            class="l"
+                                                                                                            style="margin-left:-96px">t<span
+                                                                                                                class="l"
+                                                                                                                style="margin-left:-95px">é<span
+                                                                                                                    class="l"
+                                                                                                                    style="margin-left:-96px">.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a"
+                                                style="left:1061px;top:2657px;word-spacing:-167px;letter-spacing:167px">1<span
+                                                    class="l" style="margin-left:-173px">7<span class="l"
+                                                        style="margin-left:-170px">4<span class="l"
+                                                            style="margin-left:-167px">,<span class="l"
+                                                                style="margin-left:-167px">1<span class="l"
+                                                                    style="margin-left:-173px">7 <span class="l"
+                                                                        style="margin-left:-167px">€<span class="w"
+                                                                            style="width:882px"></span>2<span class="l"
+                                                                            style="margin-left:-167px">0<span class="l"
+                                                                                style="margin-left:-169px">,<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-167px">0<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-167px">%<span
+                                                                                            class="w"
+                                                                                            style="width:805px"></span>1</span></span></span></span></span></span></span></span></span></span></span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1061px;top:2833px;word-spacing:-145px;letter-spacing:151px">P<span
+                                                    class="l" style="margin-left:-153px">r<span class="l"
+                                                        style="margin-left:-151px">i<span class="l"
+                                                            style="margin-left:-151px">x <span class="l"
+                                                                style="margin-left:-157px">H<span class="l"
+                                                                    style="margin-left:-152px">T<span class="w"
+                                                                        style="width:931px"></span>T<span class="l"
+                                                                        style="margin-left:-149px">V<span class="l"
+                                                                            style="margin-left:-156px">A<span class="w"
+                                                                                style="width:747px"></span>T<span
+                                                                                class="l"
+                                                                                style="margin-left:-155px">o<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-151px">t<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-152px">a<span
+                                                                                            class="l"
+                                                                                            style="margin-left:-151px">l</span></span></span></span></span></span></span></span></span></span></span></span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a"
+                                                style="left:1061px;top:2942px;word-spacing:-97px;letter-spacing:95px">1<span
+                                                    class="l" style="margin-left:-101px">7<span class="l"
+                                                        style="margin-left:-98px">4<span class="l"
+                                                            style="margin-left:-95px">,<span class="l"
+                                                                style="margin-left:-95px">1<span class="l"
+                                                                    style="margin-left:-101px">7 <span class="l"
+                                                                        style="margin-left:-93px">€<span class="w"
+                                                                            style="width:939px"></span>3<span class="l"
+                                                                            style="margin-left:-95px">4<span class="l"
+                                                                                style="margin-left:-95px">,<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-95px">8<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-95px">3
+                                                                                        <span class="l"
+                                                                                            style="margin-left:-93px">€<span
+                                                                                                class="w"
+                                                                                                style="width:686px"></span>2<span
+                                                                                                class="l"
+                                                                                                style="margin-left:-95px">0<span
+                                                                                                    class="l"
+                                                                                                    style="margin-left:-95px">9<span
+                                                                                                        class="l"
+                                                                                                        style="margin-left:-95px">,<span
+                                                                                                            class="l"
+                                                                                                            style="margin-left:-95px">0<span
+                                                                                                                class="l"
+                                                                                                                style="margin-left:-95px">0
+                                                                                                                <span
+                                                                                                                    class="l"
+                                                                                                                    style="margin-left:-93px">€</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1061px;top:3206px;letter-spacing:-1px">Total</span><span
+                                                class="a"
+                                                style="left:1061px;top:3303px;word-spacing:-145px;letter-spacing:151px">P<span
+                                                    class="l" style="margin-left:-153px">r<span class="l"
+                                                        style="margin-left:-151px">i<span class="l"
+                                                            style="margin-left:-151px">x <span class="l"
+                                                                style="margin-left:-157px">H<span class="l"
+                                                                    style="margin-left:-152px">T<span class="w"
+                                                                        style="width:931px"></span>T<span class="l"
+                                                                        style="margin-left:-149px">V<span class="l"
+                                                                            style="margin-left:-156px">A<span class="w"
+                                                                                style="width:747px"></span>T<span
+                                                                                class="l"
+                                                                                style="margin-left:-155px">o<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-151px">t<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-152px">a<span
+                                                                                            class="l"
+                                                                                            style="margin-left:-151px">l</span></span></span></span></span></span></span></span></span></span></span></span><span
+                                                class="a"
+                                                style="left:1061px;top:3415px;word-spacing:-96px;letter-spacing:93px">1<span
+                                                    class="l" style="margin-left:-100px">7<span class="l"
+                                                        style="margin-left:-98px">4<span class="l"
+                                                            style="margin-left:-94px">,<span class="l"
+                                                                style="margin-left:-92px">1<span class="l"
+                                                                    style="margin-left:-100px">7 <span class="l"
+                                                                        style="margin-left:-91px">€<span class="w"
+                                                                            style="width:928px"></span>3<span class="l"
+                                                                            style="margin-left:-94px">4<span class="l"
+                                                                                style="margin-left:-93px">,<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-93px">8<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-95px">3
+                                                                                        <span class="l"
+                                                                                            style="margin-left:-91px">€<span
+                                                                                                class="w"
+                                                                                                style="width:673px"></span>2<span
+                                                                                                class="l"
+                                                                                                style="margin-left:-93px">0<span
+                                                                                                    class="l"
+                                                                                                    style="margin-left:-94px">9<span
+                                                                                                        class="l"
+                                                                                                        style="margin-left:-94px">,<span
+                                                                                                            class="l"
+                                                                                                            style="margin-left:-92px">0<span
+                                                                                                                class="l"
+                                                                                                                style="margin-left:-94px">0
+                                                                                                                <span
+                                                                                                                    class="l"
+                                                                                                                    style="margin-left:-91px">€</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span
+                                                class="a"
+                                                style="left:2052px;top:3609px;word-spacing:4px;letter-spacing:-1px">Méthode
+                                                de Paiement</span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a" style="left:1387px;top:3780px;word-spacing:2px">Montant
+                                                réglé
+                                                par <span class="l7">Carte-Cadeau Apple <span
+                                                        class="w10"></span>(Manuelle)</span></span><span class="a"
+                                                style="left:2415px;top:3863px">•••• 6260</span><span class="a"
+                                                style="left:2417px;top:3945px;letter-spacing:-2px">9212502</span><span
+                                                class="a"
+                                                style="left:3252px;top:3780px;word-spacing:5px;letter-spacing:-2px">150,00
+                                                €</span><span class="a"
+                                                style="left:1885px;top:4088px;word-spacing:-1px">Montant réglé par VISA
+                                                (Puce)</span><span class="a"
+                                                style="left:2424px;top:4170px;word-spacing:-1px;letter-spacing:-1px">••••
+                                                2418</span><span class="a"
+                                                style="left:2440px;top:4253px;letter-spacing:-1px">724941</span><span
+                                                class="a" style="left:3274px;top:4088px;word-spacing:-1px">59,00
+                                                €</span><span class="a"
+                                                style="left:2020px;top:4440px;word-spacing:-1px">Solde de la carte
+                                                cadeau</span><span class="a" style="left:2415px;top:4523px">••••
+                                                6260</span><span class="a"
+                                                style="left:3305px;top:4530px;word-spacing:3px;letter-spacing:-1px">0,00
+                                                €</span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1061px;top:5015px;word-spacing:1px;letter-spacing:-1px">Résumé
+                                                TVA:</span><span class="a"
+                                                style="left:1061px;top:5112px;word-spacing:-61px;letter-spacing:58px">T<span
+                                                    class="l" style="margin-left:-62px">a<span class="l"
+                                                        style="margin-left:-59px">u<span class="l"
+                                                            style="margin-left:-59px">x <span class="l"
+                                                                style="margin-left:-55px">d<span class="l"
+                                                                    style="margin-left:-58px">e <span class="l"
+                                                                        style="margin-left:-57px">T<span class="l"
+                                                                            style="margin-left:-56px">V<span class="l"
+                                                                                style="margin-left:-63px">A<span
+                                                                                    class="w"
+                                                                                    style="width:717px"></span>A<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-59px">s<span
+                                                                                        class="l"
+                                                                                        style="margin-left:-58px">s<span
+                                                                                            class="l"
+                                                                                            style="margin-left:-59px">i<span
+                                                                                                class="l"
+                                                                                                style="margin-left:-58px">e<span
+                                                                                                    class="l"
+                                                                                                    style="margin-left:-59px">t<span
+                                                                                                        class="l"
+                                                                                                        style="margin-left:-58px">t<span
+                                                                                                            class="l"
+                                                                                                            style="margin-left:-59px">e
+                                                                                                            <span
+                                                                                                                class="l"
+                                                                                                                style="margin-left:-56px">d<span
+                                                                                                                    class="l"
+                                                                                                                    style="margin-left:-58px">e
+                                                                                                                    <span
+                                                                                                                        class="l"
+                                                                                                                        style="margin-left:-56px">l<span
+                                                                                                                            class="l"
+                                                                                                                            style="margin-left:-58px">a
+                                                                                                                            <span
+                                                                                                                                class="l"
+                                                                                                                                style="margin-left:-55px">T<span
+                                                                                                                                    class="l"
+                                                                                                                                    style="margin-left:-57px">V<span
+                                                                                                                                        class="l"
+                                                                                                                                        style="margin-left:-63px">A<span
+                                                                                                                                            class="w"
+                                                                                                                                            style="width:688px"></span>T<span
+                                                                                                                                            class="l"
+                                                                                                                                            style="margin-left:-56px">V<span
+                                                                                                                                                class="l"
+                                                                                                                                                style="margin-left:-63px">A</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a"
+                                                style="left:1061px;top:5221px;word-spacing:-107px;letter-spacing:109px">2<span
+                                                    class="l" style="margin-left:-110px">0<span class="l"
+                                                        style="margin-left:-111px">,<span class="l"
+                                                            style="margin-left:-108px">0<span class="l"
+                                                                style="margin-left:-110px">%<span class="w"
+                                                                    style="width:964px"></span>1<span class="l"
+                                                                    style="margin-left:-116px">7<span class="l"
+                                                                        style="margin-left:-111px">4<span class="l"
+                                                                            style="margin-left:-109px">,<span class="l"
+                                                                                style="margin-left:-109px">1<span
+                                                                                    class="l"
+                                                                                    style="margin-left:-115px">7 <span
+                                                                                        class="l"
+                                                                                        style="margin-left:-112px">€<span
+                                                                                            class="w"
+                                                                                            style="width:695px"></span>3<span
+                                                                                            class="l"
+                                                                                            style="margin-left:-109px">4<span
+                                                                                                class="l"
+                                                                                                style="margin-left:-109px">,<span
+                                                                                                    class="l"
+                                                                                                    style="margin-left:-109px">8<span
+                                                                                                        class="l"
+                                                                                                        style="margin-left:-109px">3
+                                                                                                        <span class="l"
+                                                                                                            style="margin-left:-111px">€</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span
+                                                class="a"
+                                                style="left:1061px;top:1466px;word-spacing:-2px;letter-spacing:-3px">Ayoub
+                                                Bourouis</span><span class="a"
+                                                style="left:1061px;top:1562px;letter-spacing:-4px">Ayoubytb677@gmail.com</span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1061px;top:5455px;letter-spacing:-1px">05/0</span>
+                                        </div>
+                                        <div class="ff5" style="font-size:42px">
+                                            <span class="a" style="left:1171px;top:5456px">6</span>
+                                        </div>
+                                        <div class="ff2" style="font-size:55px">
+                                            <span class="a"
+                                                style="left:1201px;top:5455px;word-spacing:1px;letter-spacing:-2px">/23
+                                                -
+                                                17:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_layer" style="z-index: 1">
+                                    <div class="ie_fix">
+                                        <img class="absimg"
+                                            style="left:210px;top:256px;width:480px;height:20px;clip:rect(18px 479px 19px 1px)"
+                                            src="https://html.scribdassets.com/8t5fko354wbrcvdg/images/1-8717db1bba.jpg">
+                                        <img class="absimg"
+                                            style="left:210px;top:349px;width:480px;height:20px;clip:rect(6px 479px 8px 1px)"
+                                            src="https://html.scribdassets.com/8t5fko354wbrcvdg/images/1-8717db1bba.jpg">
+                                        <img class="absimg"
+                                            style="left:210px;top:610px;width:480px;height:20px;clip:rect(10px 479px 12px 1px)"
+                                            src="https://html.scribdassets.com/8t5fko354wbrcvdg/images/1-8717db1bba.jpg">
+                                        <img class="absimg"
+                                            style="left:210px;top:975px;width:480px;height:20px;clip:rect(14px 479px 16px 1px)"
+                                            src="https://html.scribdassets.com/8t5fko354wbrcvdg/images/1-8717db1bba.jpg">
+                                        <img class="absimg"
+                                            style="left:210px;top:1078px;width:480px;height:20px;clip:rect(1px 479px 4px 1px)"
+                                            src="https://html.scribdassets.com/8t5fko354wbrcvdg/images/1-8717db1bba.jpg">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="b_tl"></div>
+                            <div class="b_tr"></div>
+                            <div class="b_br"></div>
+                            <div class="b_bl"></div>
+                            <div class="b_t"></div>
+                            <div class="b_r"></div>
+                            <div class="b_b"></div>
+                            <div class="b_l"></div>
+                        </div>
+
+                        <script type="text/javascript">
+
+                            docManager.addPage({
+                                pageNum: 1,
+                                fonts: [2, 1, 4, 5],
+                                origWidth: 902,
+                                origHeight: 1167,
+                                containerElem: document.getElementById("outer_page_1"),
+                                blur: false,
+                                innerPageElem: document.getElementById("page1")
+                            });
+                        </script>
+
+
+
+
+                        <div class="outer_page only_ie6_border " id="outer_page_2"
+                            style="width: 1000px; height: 1294px;">
+
+                            <div class="newpage" id="page2"
+                                style="width: 902px; height: 1167px; transform: scale(1.10865); transform-origin: left top;">
+                                <div class="text_layer" style="z-index:2">
+                                    <div class="ie_fix">
+                                        &nbsp;
+                                        <div class="ff3" style="font-size:133px">
+                                            <span class="a"
+                                                style="left:1629px;top:559px;letter-spacing:-1px">*R4241042102*</span>
+                                        </div>
+                                        <div class="ff0" style="font-size:45px">
+                                            <span class="a" style="left:1785px;top:725px;letter-spacing:-1px">* R 4 2 4
+                                                1 0
+                                                4 2 1 0 2 *</span>
+                                        </div>
+                                        <div class="ff4" style="font-size:59px">
+                                            <span class="a"
+                                                style="left:1745px;top:987px;word-spacing:6px;letter-spacing:-1px">N° de
+                                                <span class="l6">documen<span class="w6"></span>t (NTS): <span
+                                                        class="w9"></span>R4242N<span class="w6"></span>_R13_20<span
+                                                        class="l6">1<span class="l6">2</span></span></span></span><span
+                                                class="a" style="left:1834px;top:1069px;word-spacing:-1px">Signature
+                                                électronique: B0428Q-zy</span><span class="a"
+                                                style="left:2065px;top:1152px;word-spacing:-2px;letter-spacing:-1px">05/12/22
+                                                - <span class="w7"></span>17:4<span class="l7">1</span></span><span
+                                                class="a" style="left:1971px;top:1234px;word-spacing:-9px">SIRET: <span
+                                                    class="w7"></span>483209383000<span class="l6">72</span></span><span
+                                                class="a"
+                                                style="left:2119px;top:1317px;word-spacing:1px;letter-spacing:-1px">NAF:
+                                                4741Z</span><span class="a"
+                                                style="left:1928px;top:1399px;word-spacing:-3px">Terminal:
+                                                HGYHG3BW0F0N</span><span class="a"
+                                                style="left:1895px;top:1482px;word-spacing:-1px">Nombre de lignes
+                                                d’articles: 1</span><span class="a"
+                                                style="left:1968px;top:1565px;word-spacing:-3px">Type d’opération:
+                                                vente</span><span class="a"
+                                                style="left:1521px;top:1750px;word-spacing:-2px">Nom du logiciel: Apple
+                                                <span class="w6"></span>easyPay|NTS fiscalization middleware</span><span
+                                                class="a"
+                                                style="left:1982px;top:1833px;word-spacing:12px;letter-spacing:-2px">Version:
+                                                1.0|24.64.11.0.1</span><span class="a"
+                                                style="left:1061px;top:2142px">S'il
+                                                vous plaît débitez mon compte <span class="w"
+                                                    style="width:23px"></span>••••
+                                                241<span class="l9">8 de 59.00 € (Vente)</span></span><span class="a"
+                                                style="left:1061px;top:2225px;letter-spacing:-2px">A0000000031010</span><span
+                                                class="a"
+                                                style="left:1061px;top:2307px;word-spacing:1px;letter-spacing:-1px">ID
+                                                de la
+                                                transaction: 411942</span><span class="a"
+                                                style="left:1061px;top:2390px;word-spacing:-3px">ID de <span
+                                                    class="w6"></span>Terminal: xxxx027<span
+                                                    class="l6">3</span></span><span class="a"
+                                                style="left:1061px;top:2472px;word-spacing:-2px">Demande PAN
+                                                Numéro de séquence: 00</span><span class="a"
+                                                style="left:1061px;top:2555px">Nom préféré: VISA</span><span class="a"
+                                                style="left:1061px;top:2637px;word-spacing:1px">TVR:
+                                                000000E000</span><span class="a"
+                                                style="left:1061px;top:2720px;word-spacing:-1px">TSI:
+                                                E800</span><span class="a"
+                                                style="left:1061px;top:2803px;word-spacing:-1px">Vérifié par code
+                                                PIN.</span><span class="a"
+                                                style="left:1934px;top:3122px;word-spacing:-1px">Apple Retail France
+                                                E.U.R.L</span><span class="a" style="left:1580px;top:3205px">Ce sac est
+                                                réutilisable. <span class="w11"></span>Ne pas jeter sur la voie
+                                                publique.</span><span class="a"
+                                                style="left:1182px;top:3287px;word-spacing:-1px">Les produits achetés
+                                                bénéficient d'une garantie légale de conformité de 2 ans à <span
+                                                    class="w7"></span>partir de</span><span class="a"
+                                                style="left:1168px;top:3370px;word-spacing:-1px">la date d'achat,
+                                                assujettie
+                                                aux termes et conditions du code de consommation en <span
+                                                    class="w7"></span>vigueur.</span><span class="a"
+                                                style="left:1861px;top:3453px;word-spacing:-1px">Il ne s'agit pas d'une
+                                                <span class="w6"></span>facture TVA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="image_layer" style="z-index: 1">
+                                    <div class="ie_fix">
+                                        <img class="absimg"
+                                            style="left: 210px; top: 397px; width: 480px; height: 13px; clip: rect(1px, 479px, 4px, 1px); display: block;"
+                                            src="https://html.scribdassets.com/8t5fko354wbrcvdg/images/2-5aaea31fc8.jpg">
+                                        <img class="absimg"
+                                            style="left: 210px; top: 596px; width: 480px; height: 13px; clip: rect(6px, 479px, 8px, 1px); display: block;"
+                                            orig="http://html.scribd.com/8t5fko354wbrcvdg/images/2-5aaea31fc8.jpg">
+                                        <img class="absimg"
+                                            style="left: 210px; top: 703px; width: 480px; height: 13px; clip: rect(10px, 479px, 12px, 1px); display: block;"
+                                            orig="http://html.scribd.com/8t5fko354wbrcvdg/images/2-5aaea31fc8.jpg">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="b_tl"></div>
+                            <div class="b_tr"></div>
+                            <div class="b_br"></div>
+                            <div class="b_bl"></div>
+                            <div class="b_t"></div>
+                            <div class="b_r"></div>
+                            <div class="b_b"></div>
+                            <div class="b_l"></div>
+                        </div>
+
+                        <script type="text/javascript">
+
+                            docManager.addPage({
+                                pageNum: 2,
+                                fonts: [3, 0, 4],
+                                origWidth: 902,
+                                origHeight: 1167,
+                                containerElem: document.getElementById("outer_page_2"),
+                                blur: false,
+                                innerPageElem: document.getElementById("page2")
+                            });
+                        </script>
+
+
+
+
+                        <script type="text/javascript">
+
+
+
+
+
+
+                            if (window.docManagerIEAdded != true) {
+                                docManager.allPagesAdded();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        var container = document.querySelector(".document_container");
+        if (window.docManager && window.DocumentManager && container) {
+            window.docManager.observeImages(container);
+        }
+    </script>
+
+</body>
+
+</html>

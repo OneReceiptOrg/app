@@ -1,0 +1,10 @@
+export const MAX_RECEIPTS_PER_DAY = 5;
+
+export const ADMIN_USER_IDS = [
+  '269584067165421569',
+  '529705298802245633'
+]; 
+
+
+export const ROLE_REVALIDATION_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
+

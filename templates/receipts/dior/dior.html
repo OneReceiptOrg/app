@@ -1,0 +1,859 @@
+<html>
+
+<head>
+    <style>
+        @charset "UTF-8";
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video,
+        input,
+        textarea {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section,
+        time {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+            color: black;
+            background: white;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* meyerweb css reset end */
+
+        textarea:focus,
+        input:focus {
+            outline: 0;
+        }
+
+        input {
+            border-width: 0;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .group:before,
+        .group:after {
+            content: " ";
+            display: table;
+        }
+
+        .group:after {
+            clear: both;
+        }
+
+        .group {
+            zoom: 1;
+            /* ie 6/7 */
+        }
+
+        embed,
+        img,
+        object,
+        video {
+            max-width: 100%;
+        }
+
+        sup {
+            font-size: 58.3%;
+            vertical-align: text-top;
+        }
+
+        sub {
+            font-size: 58.3%;
+            vertical-align: text-bottom;
+        }
+
+        .no-space-between-inline-blocks {
+            *letter-spacing: normal;
+            /*reset IE < 8*/
+            letter-spacing: -0.31em;
+            /*webkit*/
+            word-spacing: -0.43em;
+            /*IE < 8 && gecko*/
+        }
+
+        /*restore spacing on inner elements*/
+        .no-space-between-inline-blocks>* {
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+
+        .displace {
+            left: -5000px;
+            position: absolute;
+        }
+
+        html {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            min-width: 845px;
+            color: #000000;
+            font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+            font-size: 2.155322rem;
+            /* 34.49px / 16px = 2.155625rem */
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 0;
+            text-decoration: none;
+        }
+
+        .global_container_ {
+            float: none;
+            height: auto;
+            margin: 0 auto;
+            padding: 248px 0 81px;
+            position: relative;
+            width: 100%;
+            /* 907px / 907px = 100% */
+            background: #ffffff center 0;
+            background-position: center top;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .l-constrained {
+            margin: 0 auto;
+            position: relative;
+            width: 845px;
+        }
+
+        .header {
+            height: 115px;
+            margin: 0 auto;
+            position: relative;
+            right: 11px;
+            width: 285px;
+            background: url(/static/receipts/dior/images/ior.png) no-repeat;
+        }
+
+        .main-content-wrapper {
+            margin: 21px 0 0;
+            position: relative;
+            width: 831px;
+            z-index: 0;
+        }
+
+        .customer-service-holtime {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            right: 14.5px;
+            z-index: 48;
+        }
+
+        .text {
+            margin: 18px 235px 0;
+            position: relative;
+            z-index: 47;
+            font-size: 2.460404rem;
+            /* 39.37px / 16px = 2.460625rem */
+        }
+
+        .kopiya {
+            display: block;
+            margin: 14px auto 0;
+            position: relative;
+            z-index: 13;
+        }
+
+        .row-2 {
+            margin: 8px 0 0 32px;
+            overflow: hidden;
+            position: relative;
+            z-index: 33;
+        }
+
+        .text-2 {
+            float: left;
+            margin: 1px 0 0;
+            font-size: 2.351913rem;
+            /* 37.63px / 16px = 2.351875rem */
+        }
+
+        .text-3 {
+            float: left;
+            margin: 0 0 0 74px;
+            font-size: 2.415901rem;
+            /* 38.65px / 16px = 2.415625rem */
+        }
+
+        .text-4 {
+            float: left;
+            margin: 1px 0 0 17px;
+            font-size: 2.321487rem;
+            /* 37.14px / 16px = 2.32125rem */
+        }
+
+        .text-5 {
+            float: left;
+            margin: 2px 0 0 50px;
+            font-size: 2.294512rem;
+            /* 36.71px / 16px = 2.294375rem */
+        }
+
+        .text-6 {
+            float: left;
+            margin: 2px 0 0 31px;
+            font-size: 2.280691rem;
+            /* 36.49px / 16px = 2.280625rem */
+        }
+
+        .text-7 {
+            margin: -4px 0 0 30px;
+            position: relative;
+            z-index: 3;
+            font-size: 2.197425rem;
+            /* 35.16px / 16px = 2.1975rem */
+        }
+
+        .customer {
+            display: block;
+            margin: 3px 0 0 31px;
+            position: relative;
+            z-index: 4;
+        }
+
+        .text-8 {
+            margin: 5px 0 0 31px;
+            position: relative;
+            z-index: 10;
+            font-size: 2.106406rem;
+            /* 33.7px / 16px = 2.10625rem */
+        }
+
+        .amount {
+            display: block;
+            left: 10.5px;
+            margin: 36px auto 0;
+            position: relative;
+            z-index: 11;
+        }
+
+        .layer {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            z-index: 12;
+        }
+
+        .nav {
+            margin: 27px 0 0 36px;
+            position: relative;
+            width: 516px;
+            z-index: 15;
+        }
+
+        .nav-list {
+            position: relative;
+            list-style: none;
+        }
+
+        .nav-list li {
+            float: left;
+            margin: 0 27px 0 0;
+        }
+
+        .nav-list li:last-child {
+            margin-right: 0;
+        }
+
+        .row-8 {
+            left: 201px;
+            margin: 20px auto 0;
+            position: relative;
+            width: 391px;
+            z-index: 49;
+        }
+
+        .col-14 {
+            float: left;
+            position: relative;
+            width: 197px;
+        }
+
+        .eur {
+            display: block;
+            left: 22.5px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .text-9 {
+            display: block;
+            margin: 5px 0 0;
+        }
+
+        .text-10 {
+            float: right;
+            margin: 30px 0 0;
+        }
+
+        .row-6 {
+            margin: 30px 0 0 29px;
+            position: relative;
+            width: 802px;
+            z-index: 31;
+        }
+
+        .salesperson {
+            float: left;
+            margin: 4px 0 0;
+        }
+
+        .text-11 {
+            float: left;
+            margin: 0 0 0 32px;
+            font-size: 2.192333rem;
+            /* 35.08px / 16px = 2.1925rem */
+        }
+
+        .text-12 {
+            float: right;
+            margin: 59px 8px 0 0;
+            font-size: 2.301891rem;
+            /* 36.83px / 16px = 2.301875rem */
+        }
+
+        .ht {
+            float: right;
+            margin: 66px 63px 0 0;
+        }
+
+        .row-7 {
+            margin: 1px 0 0 290px;
+            position: relative;
+            width: 541px;
+            z-index: 36;
+        }
+
+        .tav-product {
+            float: left;
+            margin: 1px 0 0;
+        }
+
+        .text-13 {
+            float: left;
+            margin: 0 0 0 13px;
+            font-size: 2.342899rem;
+            /* 37.49px / 16px = 2.343125rem */
+        }
+
+        .text-14 {
+            float: right;
+            margin: 0 12px 0 0;
+            font-size: 2.157412rem;
+            /* 34.52px / 16px = 2.1575rem */
+        }
+
+        .kopiya-2 {
+            display: block;
+            margin: 10px auto 0;
+            position: relative;
+            z-index: 14;
+        }
+
+        .row-4 {
+            margin: 12px 9px 0 446px;
+            position: relative;
+            z-index: 30;
+        }
+
+        .total-ttc {
+            float: left;
+            margin: 1px 52px 0 0;
+        }
+
+        .text-15 {
+            font-size: 2.122742rem;
+            /* 33.96px / 16px = 2.1225rem */
+        }
+
+        .row {
+            margin: 17px auto 0;
+            min-height: 88px;
+            padding: 5px 4px 46px;
+            position: relative;
+            width: 829px;
+            z-index: 16;
+            background: url(/static/receipts/dior/images/sloi_4.png) no-repeat;
+        }
+
+        .text-16 {
+            float: left;
+            width: 213px;
+            font-size: 2.268795rem;
+            /* 36.3px / 16px = 2.26875rem */
+        }
+
+        .text-17 {
+            float: right;
+            margin: 0 15px 0 0;
+            width: 155px;
+            font-size: 2.2953rem;
+            /* 36.72px / 16px = 2.295rem */
+        }
+
+        .row-3 {
+            margin: 1px 0 0;
+            overflow: hidden;
+            position: relative;
+            width: 818px;
+            z-index: 6;
+        }
+
+        .col-8 {
+            float: left;
+            margin: 2px 0 0;
+            position: relative;
+            width: 341px;
+        }
+
+        .change {
+            display: block;
+            margin: 0 0 0 6px;
+            position: relative;
+        }
+
+        .cash {
+            display: block;
+            margin: 0 0 0 6px;
+            position: relative;
+        }
+
+        .sold-item-count-1 {
+            display: block;
+            margin: 36px auto 0;
+        }
+
+        .sales-tax-analysis {
+            display: block;
+            margin: 34px 0 0 8px;
+            position: relative;
+        }
+
+        .row-5 {
+            margin: 20px 0 0;
+            position: relative;
+        }
+
+        .col-11 {
+            float: left;
+            position: relative;
+            width: 89px;
+        }
+
+        .code {
+            display: block;
+            position: relative;
+        }
+
+        .local {
+            display: block;
+            margin: 35px 0 0;
+            position: relative;
+        }
+
+        .col-12 {
+            float: right;
+            position: relative;
+            width: 119px;
+        }
+
+        .rate {
+            display: block;
+            position: relative;
+        }
+
+        .text-18 {
+            margin: 30px 0 0;
+            font-size: 2.300561rem;
+            /* 36.81px / 16px = 2.300625rem */
+            text-align: right;
+        }
+
+        .col-9 {
+            float: right;
+            position: relative;
+            width: 394px;
+        }
+
+        .text-19 {
+            font-size: 2.178581rem;
+            /* 34.86px / 16px = 2.17875rem */
+            text-align: right;
+        }
+
+        .row-9 {
+            margin: 185px 0 0;
+            position: relative;
+        }
+
+        .col-15 {
+            float: left;
+            margin: 0 161px 0 0;
+            position: relative;
+            width: 125px;
+        }
+
+        .taxable {
+            display: block;
+        }
+
+        .text-20 {
+            margin: 28px 13px 0;
+            font-size: 2.398642rem;
+            /* 38.38px / 16px = 2.39875rem */
+        }
+
+        .col-16 {
+            float: left;
+            margin: 1px 0 0;
+            position: relative;
+            width: 83px;
+        }
+
+        .tax {
+            display: block;
+            left: 4.5px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .text-21 {
+            margin: 29px 0 0;
+            font-size: 2.398642rem;
+            /* 38.38px / 16px = 2.39875rem */
+        }
+
+        .sloi-5 {
+            display: block;
+            margin: -3px auto 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .qtiljl4jll613jp4ajhkm1 {
+            margin: 7px 0 0;
+            position: relative;
+            z-index: 9;
+            font-size: 2.223743rem;
+            /* 35.58px / 16px = 2.22375rem */
+            text-align: center;
+        }
+
+        .footer {
+            height: 412px;
+            left: 6px;
+            margin: 41px auto 0;
+            position: relative;
+            width: 757px;
+            background: url(/static/receipts/dior/images/customer_copy.png) no-repeat;
+        }
+
+        .text-style {
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+
+    <base href="https://receiptly.cc/static/receipts/dior/">
+    <title>Your site's title should be here</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Your site's description should be here">
+    <meta name="keywords" content="Your site's keywords should be here">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/dior/style.css">
+    <!--[if IE 6]>
+      <style>* html .group { height: 1%; }</style>
+      <![endif]-->
+    <!--[if IE 7]>
+      <style>*:first-child+html .group { min-height: 1px; }</style>
+      <![endif]-->
+    <!--[if lt IE 9]> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> 
+      <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://receiptly.cc/static/receipts/dior/js/match-height.js"></script>
+    <script>
+        $(function () {
+            $('.match-height-bootstrap-row > * > *').matchHeight();
+            $('.match-height > *').matchHeight();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="global_container_">
+        <div class="l-constrained">
+            <header class="header"></header>
+            <div class="main-content-wrapper">
+                <img class="customer-service-holtime" src="/static/receipts/dior/images/customer_service_holtime.png"
+                    alt="" width="404" height="33">
+                <p class="text">Tel: {{STORE_PHONE}}</p>
+                <p class="text">{{STORE_ADDRESS}}<br>{{STORE_CITY_STATE_ZIP}}</p>
+                <img class="kopiya" src="/static/receipts/dior/images/-_-_-_-_-_-_-_-_-_-_-_-_-.png" alt="" width="818"
+                    height="4">
+                <div style="height: 30px;"></div>
+                <p class="text-2">{{STORE_ID}}</p>
+                <p class="text-3">{{DATE}}</p>
+                <p class="text-4">{{TIME}}</p>
+                <p class="text-5">{{REGISTER_ID}}</p>
+                <p class="text-6">{{TRANS_COUNTER}}</p>
+                <div style="height: 20px;"></div>
+                <p class="text-7">Cashier: {{CASHIER_ID}}</p>
+                <img class="customer" src="/static/receipts/dior/images/customer.png" alt="" width="151" height="25">
+                <div style="height: 15px;"></div>
+                <p class="text-8">{{CUSTOMER_NAME}}<br>Customer #: {{CUSTOMER_ID}}</p>
+                <img class="amount" src="/static/receipts/dior/images/amount.png" alt="" width="750" height="34">
+                <img class="layer" src="/static/receipts/dior/images/-_-_-_-_-_-_-_-_-_-_-_-_-.png" alt="" width="818"
+                    height="4">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li>
+                            <p><a href="#">{{STORE_NAME}}</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#">SAC</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#">MY ABCDIOR &nbsp;EN</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#">AGNEAU</a></p>
+                        </li>
+                    </ul>
+                </nav>
+                <img class="eur" src="/static/receipts/dior/images/eur.png" alt="EUR" width="56" height="26"
+                    title="EUR">
+                <img class="text-9" src="/static/receipts/dior/images/1_3_200_00.png" alt="1    3, 200.00" width="197"
+                    height="31" title="1    3, 200.00">
+                <img class="text-10" src="/static/receipts/dior/images/3_200_00_3.png" alt="3, 200.00" width="143"
+                    height="30" title="3, 200.00">
+                <img class="salesperson" src="/static/receipts/dior/images/salesperson.png" alt="" width="204"
+                    height="36">
+                <p class="text-11">{{SALESPERSON_ID}}</p>
+                <p class="text-12">${{TOTAL_AMOUNT}}</p>
+                <img class="ht" src="/static/receipts/dior/images/ht.png" alt="" width="38" height="24">
+                <img class="tav-product" src="/static/receipts/dior/images/tav_product.png" alt="" width="195"
+                    height="33">
+                <p class="text-13">{{TAX_RATE}}%</p>
+                <p class="text-14">${{TAX_AMOUNT}}</p>
+                <img class="kopiya-2" src="/static/receipts/dior/images/-_-_-_-_-_-_-_-_-_-_-_-_-.png" alt=""
+                    width="818" height="4">
+                <img class="total-ttc" src="/static/receipts/dior/images/total_ttc.png" alt="" width="170" height="27">
+                <p class="text-15">${{SUBTOTAL}}</p>
+                <p class="text-16">{{PRODUCT_NAME}}</p>
+                <p class="text-16a" style="margin-left: 36px;">SKU: {{PRODUCT_SKU}}</p>
+                <p class="text-17">${{ITEM_PRICE}}</p>
+                <img class="change" src="/static/receipts/dior/images/change.png" alt="" width="113" height="36">
+                <img class="cash" src="/static/receipts/dior/images/cash.png" alt="" width="76" height="31">
+                <img class="sold-item-count-1" src="/static/receipts/dior/images/sold_item_count_1.png" alt=""
+                    width="328" height="28">
+                <img class="sales-tax-analysis" src="/static/receipts/dior/images/sales_tax_analysis.png" alt=""
+                    width="303" height="37">
+                <img class="code" src="/static/receipts/dior/images/code.png" alt="" width="71" height="28">
+                <img class="local" src="/static/receipts/dior/images/local.png" alt="" width="89" height="28">
+                <img class="rate" src="/static/receipts/dior/images/rate.png" alt="" width="69" height="27">
+                <p class="text-18">{{TAX_RATE_DETAIL}}<strong><em class="text-style">%</em></strong></p>
+                <p class="text-19">${{TAX_AMOUNT_DETAIL}}</p>
+                <img class="taxable" src="/static/receipts/dior/images/taxable.png" alt="" width="125" height="29">
+                <p class="text-20">${{TAXABLE_AMOUNT_DETAIL}}</p>
+                <img class="tax" src="/static/receipts/dior/images/tax.png" alt="" width="56" height="27">
+                <p class="text-21">${{TAX_TOTAL_DETAIL}}</p>
+                <img class="sloi-5" src="/static/receipts/dior/images/sloi_5.jpg" alt="" width="807" height="223">
+                <p class="qtiljl4jll613jp4ajhkm1">{{TRANSACTION_ID}}</p>
+            </div>
+            <footer class="footer"></footer>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+<!-- FORM: -->
+<!-- Products
+DIOR OBLIQUE JACKET
+Price
+0.00
+Tax
+216.00
+Date
+01/15/2024 14:30
+Order Number
+ORD-562584
+Store Name
+DIOR LONDON
+Store Address
+160-162 New Bond Street
+Store City
+London W1S 2UE
+Store Phone
++44 20 7172 0172
+Transaction Number
+TR-89354
+Customer Name
+JAMES WILSON
+Product SKU
+1DIOR239
+Card Last 4
+4892 -->

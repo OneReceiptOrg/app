@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+    <style>
+        .save-button {
+            width: 100px;
+            height: 50px;
+        }
+
+
+        #receipt { /* Note: This ID exists in your CSS but not in the HTML provided, maybe it's a typo or intended for a wrapper you didn't include? The fix below works on #receipt3 */
+            width: 600px;
+            z-index: -20;
+            margin: 10px;
+            position: relative;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 660px;
+            min-width: 300px;
+            overflow: auto;
+            margin: 0 auto;
+            height: 800px;
+        }
+
+        .save-button {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+
+    <base href="https://receiptly.cc/static/receipts/adidas/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Adidas Receipt</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/adidas/adidas/fonts/Cantarell.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .adidas-top-part {
+            font-size: 23px;
+            font-weight: normal;
+            width: 600px;
+            margin: 0 auto;
+            /* Added height: auto; to ensure it expands if needed, though default */
+            height: auto;
+            /* Added min-height if you want to ensure it has some visual height even if empty, but auto should work */
+            /* min-height: 100px; */
+        }
+
+        .adidas-top-part div {
+            /* Removed height: 37px; as it might conflict, letting content dictate height */
+            /* height: 37px; */
+            text-align: center;
+            padding-top: 0;
+        }
+
+        .address {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            gap: 0;
+            margin: 0;
+        }
+
+        .address2 {
+            display: flex;
+            flex-direction: column;
+            font-size: 23px;
+            gap: 0;
+            margin: 0;
+        }
+
+        .address div,
+        .address2 div {
+            margin: 0;
+            padding: 0;
+             /* Added to ensure these divs take up natural height */
+            height: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Remove the black outline when clicking */
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="receipt3" class="adidas-top-part" contenteditable="true">
+        <div style="height: 50px; padding-top: 0px;" contenteditable="false">
+            <img src="https://receiptly.cc/static/receipts/adidas/adidas/images/brand_icons/adidas.png" style="height: 650%;">
+        </div>
+        <!-- The ONLY change is removing `height: 429px;` from the style attribute below -->
+        <div style="padding-top: 270px;">
+            <div class="address">
+                <div>{{storeId}} - {{storeName}}</div>
+                <div>{{storeAddress}}</div>
+                <div>{{storeCity}}</div>
+                <div>{{storePhone}}</div>
+            </div>
+
+            
+            <div style="font-size: 20px;">l-{{transactionId}}</div>
+            <div style="height: 10px;"></div>
+            <div style="font-size: 20px;">{{dateTime}}</div>
+            <div style="height: 50px;"></div>
+
+            {{#each products}}
+            <div class="address2">
+                <div style="text-align: left;">{{sku}}: {{name}} {{price}} *</div>
+                <div style="text-align: left;">{{quantity}} {{description}} {{size}}</div>
+            </div>
+            <div style="height: 70px;"></div>
+            {{/each}}
+
+            <div class="address2">
+                <div style="text-align: left;"><strong>Subtotal </strong>{{subtotal}}</div>
+                <div style="text-align: left;"><strong>{{taxLabel}} {{tax}}</strong></div>
+                <div style="text-align: left;"><strong>Total {{total}}</strong></div>
+                <div style="text-align: left;">Payment {{payment}}</div>
+                <div style="text-align: left;"><strong>Balance ${{balance}}</strong></div>
+            </div>
+            <div style="height: 50px;"></div>
+            <div style="text-align: left;">{{paymentMethod}} {{paymentDate}} {{paymentAmount}}</div>
+            <div style="text-align: left;">Ref: {{referenceNumber}}</div>
+            <div style="text-align: left;">Approved Auth: {{authNumber}}</div>
+            <div style="text-align: left;">Last 4 digits: {{cardLast4}}</div>
+            <div style="height: 26px;"></div>
+            <img src="https://receiptly.cc/static/receipts/adidas/adidas/images/brand_icons/ending.png">
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="https://receiptly.cc/static/receipts/stussy/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/stussy/stussy/static/fonts/Vazir.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 600px;
+            padding: 20px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stussy-top-part {
+            font-size: 20px;
+            font-weight: normal;
+            background: white;
+            border: none;
+            outline: none;
+        }
+
+        .stussy-top-part div {
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: auto;
+            background: white;
+            border: none;
+            outline: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="container">
+        <div id="receipt3" class="stussy-top-part" contenteditable="true">
+            <div style="height: 150px; display: flex; justify-content: center; align-items: center; padding-top: 100px;"
+                contenteditable="false">
+                <img src="https://receiptly.cc/static/receipts/stussy/stussy/static/images/brand_icons/stussy.png"
+                    style="height: 200%;">
+            </div>
+            <div style="padding-top: 60px; text-align: left; ">
+                <div>{{STORE_ADDRESS_LINE1}}</div>
+                <div>{{STORE_CITY}}</div>
+                <div>{{STORE_PHONE}}</div>
+                <div style="height: 25px;"></div>
+                <div style="font-size: 36px;">Sales Receipt</div>
+                <div style="height: 15px;"></div>
+                <div>{{DATE_TIME}}</div>
+                <div style="height: 30px;"></div>
+                <div style="line-height: 1.5; text-align: left;"> Ticket: {{TICKET_NUMBER}}</div>
+                <div style="line-height: 1.5; text-align: left;"> VAT #: {{VAT_NUMBER}}</div>
+                <div style="line-height: 1.5; text-align: left;"> Register: {{REGISTER}}</div>
+                <div style="line-height: 1.5; text-align: left;"> Employee: {{EMPLOYEE}}</div>
+                <div style="height: 50px;"></div>
+
+                <div style="text-align: left;">
+                    <div style="text-align: left; line-height: 1.5; padding-left: 8px;"> Item # Price</div>
+                    <img src="https://receiptly.cc/static/receipts/stussy/stussy/static/images/brand_icons/seperator.png"
+                        style="margin-left: -12px; margin-top: 10px">
+                    <div style="text-align: left; padding-left: 8px;"> {{PRODUCT_NAME}} 1 €{{PRODUCT_PRICE}}</div>
+                    <div style="line-height: 1.5; text-align: left; padding-left: 8px;"> {{PRODUCT_SIZE}}</div>
+                    <img src="https://receiptly.cc/static/receipts/stussy/stussy/static/images/brand_icons/seperator.png"
+                        style="margin-left: -12px; position: relative; margin-top: 10px">
+                    <div style="text-align: left; padding-left: 8px;"> Subtotal €{{SUBTOTAL}}</div>
+                    <div style="text-align: left; padding-left: 8px;"> BTW (€{{TAX_BASE}}@ {{TAX_RATE}}%)
+                        €{{TAX_AMOUNT}}</div>
+                    <div style="text-align: left; padding-left: 8px;"> Total Fax €{{TAX_AMOUNT}}</div>
+                    <div style="text-align: left; padding-left: 8px;"> Total €{{TOTAL}}</div>
+                    <div style="height: 20px;"></div>
+                    <div style="text-align: left; line-height: 1.5; padding-left: 8px;"> PAYMENTS</div>
+                    <img src="https://receiptly.cc/static/receipts/stussy/stussy/static/images/brand_icons/seperator.png"
+                        style="margin-left: -12px; margin-top: 10px">
+                    <div style="text-align: left; padding-left: 8px;"> {{PAYMENT_METHOD}} €{{TOTAL}}</div>
+                    <div style="height: 20px;"></div>
+                    <div style="padding-left: 8px;">SALE ITEMS : ALL SALES ARE FINAL NO</div>
+                    <div style="line-height: 1.5; padding-left: 8px;">REFUNDS OR EXCHANGES,</div>
+                    <div style="height: 30px;"></div>
+                    <div style="padding-left: 8px;">Worldwide since 1980!</div>
+                    <div style="line-height: 1.5; padding-left: 8px;">www.stussy.com</div>
+                    <div style="height: 10px;"></div>
+                    <div style="padding-left: 8px;">Positive vibes only !</div>
+                    <div style="height: 10px;"></div>
+                    <div style="padding-left: 8px;">Thank you!</div>
+                    <div style="height: 20px;"></div>
+                    <img src="https://receiptly.cc/static/receipts/stussy/stussy/static/images/brand_icons/qr.png"
+                        style="margin-left: 8px;">
+                    <div style="height: 20px;"></div>
+                    <div style="text-align: left; padding-left: 8px;"> {{BARCODE_NUMBER}}</div>
+                    <div style="height: 40px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- FORM: -->
+<!-- Products
+Basic Stüssy Hoodie
+Price
+130.00
+Tax
+11.70
+Date
+03/12/2024 12:30
+Order Number
+ORD-570788
+Store Name
+Stüssy
+Store Address
+115 Spring Street
+Store City
+New York, NY 10012
+Store Phone
+(212) 226-8493
+Transaction Number
+ST-24031200345
+Cashier ID
+STY123
+Product SKU
+1924656
+Product Size
+L
+Card Last 4
+6789 -->

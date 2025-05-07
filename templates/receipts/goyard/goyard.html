@@ -1,0 +1,805 @@
+<html>
+
+<head>
+    <style>
+        @charset "UTF-8";
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video,
+        input,
+        textarea {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section,
+        time {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+            color: black;
+            background: white;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* meyerweb css reset end */
+
+        textarea:focus,
+        input:focus {
+            outline: 0;
+        }
+
+        input {
+            border-width: 0;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .group:before,
+        .group:after {
+            content: " ";
+            display: table;
+        }
+
+        .group:after {
+            clear: both;
+        }
+
+        .group {
+            zoom: 1;
+            /* ie 6/7 */
+        }
+
+        embed,
+        img,
+        object,
+        video {
+            max-width: 100%;
+        }
+
+        sup {
+            font-size: 58.3%;
+            vertical-align: text-top;
+        }
+
+        sub {
+            font-size: 58.3%;
+            vertical-align: text-bottom;
+        }
+
+        .no-space-between-inline-blocks {
+            *letter-spacing: normal;
+            /* reset IE < 8 */
+            letter-spacing: -0.31em;
+            /* webkit */
+            word-spacing: -0.43em;
+            /* IE < 8 && gecko */
+        }
+
+        /*restore spacing on inner elements*/
+        .no-space-between-inline-blocks>* {
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+
+        .displace {
+            left: -5000px;
+            position: absolute;
+        }
+
+        html {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            min-width: 789px;
+            color: #000000;
+            font-family: Arvo, serif;
+            font-size: 2.300383rem;
+            /* 36.81px / 16px = 2.300625rem */
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: -0.085em;
+            text-decoration: none;
+        }
+
+        .global_container_ {
+            float: none;
+            height: auto;
+            margin: 0 auto;
+            padding: 37px 0 45px;
+            position: relative;
+            width: 100%;
+            /* 819px / 819px = 100% */
+            background: #ffffff center 0;
+            background-position: center top;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .l-constrained {
+            margin: 0 auto;
+            position: relative;
+            width: 789px;
+            z-index: 0;
+        }
+
+        .header {
+            height: 325px;
+            margin: 0 auto;
+            position: relative;
+            width: 403px;
+            z-index: 2;
+            background: url(/static/receipts/goyard/images/logo_goyard.png) no-repeat;
+        }
+
+        .text {
+            margin: 53px 0 0;
+            position: relative;
+            z-index: 3;
+            font-size: 2.660971rem;
+            /* 42.58px / 16px = 2.66125rem */
+            letter-spacing: -0.04em;
+            line-height: 36.72311px;
+            text-align: center;
+        }
+
+        .text-2 {
+            margin: 8px 0 0;
+            position: relative;
+            z-index: 30;
+            font-size: 2.063125rem;
+            /* 33.01px / 16px = 2.063125rem */
+            letter-spacing: -0.04em;
+            line-height: 36.72px;
+        }
+
+        .text-3 {
+            margin: 34px 0 0;
+            position: relative;
+            z-index: 4;
+            font-size: 2.61132rem;
+            /* 41.78px / 16px = 2.61125rem */
+            letter-spacing: -0.04em;
+            line-height: 36.0379px;
+        }
+
+        .text-4 {
+            margin: -14px 0 0;
+            position: relative;
+            z-index: 24;
+            font-size: 3.436842rem;
+            /* 54.99px / 16px = 3.436875rem */
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .row-3 {
+            margin: -12px 0 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 5;
+        }
+
+        .description {
+            float: left;
+            margin: 0 285px 0 0;
+            width: 232px;
+            font-size: 2.668494rem;
+            /* 42.7px / 16px = 2.66875rem */
+            letter-spacing: -0.04em;
+        }
+
+        .text-5 {
+            float: left;
+            margin: 4px 0 0;
+            width: 269px;
+            font-size: 2.668494rem;
+            /* 42.7px / 16px = 2.66875rem */
+            letter-spacing: 0.01em;
+        }
+
+        .text-6 {
+            margin: -25px 0 0;
+            position: relative;
+            z-index: 25;
+            font-size: 3.436842rem;
+            /* 54.99px / 16px = 3.436875rem */
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .row-4 {
+            margin: -5px 0 0;
+            position: relative;
+            z-index: 7;
+        }
+
+        .text-7 {
+            float: left;
+            margin: 0 63px 0 0;
+            width: 570px;
+            font-size: 2.519401rem;
+            /* 40.31px / 16px = 2.519375rem */
+            letter-spacing: -0.075em;
+        }
+
+        .text-8 {
+            float: left;
+            margin: 2px 0 0;
+            width: 156px;
+            font-size: 2.519401rem;
+            /* 40.31px / 16px = 2.519375rem */
+            letter-spacing: -0.075em;
+        }
+
+        .belve3pmty29cg29p {
+            margin: 2px 0 0 74px;
+            position: relative;
+            z-index: 23;
+            font-size: 1.950843rem;
+            /* 31.21px / 16px = 1.950625rem */
+            letter-spacing: -0.075em;
+        }
+
+        .row {
+            margin: 40px 0 0;
+            position: relative;
+            z-index: 20;
+        }
+
+        .row>* {
+            float: left;
+            margin: 0 15.3px 0 0;
+        }
+
+        .row>*:last-child {
+            margin-right: 0 !important;
+        }
+
+        .text-9 {
+            margin-top: 3px !important;
+        }
+
+        .text-10 {
+            font-size: 4.583768rem;
+            /* 73.34px / 16px = 4.58375rem */
+            letter-spacing: -0.07em;
+        }
+
+        .text-11 {
+            margin-top: 4px !important;
+        }
+
+        .text-12 {
+            margin: 2px 0 0;
+            position: relative;
+            z-index: 15;
+            font-size: 2.787814rem;
+            /* 44.61px / 16px = 2.788125rem */
+            letter-spacing: -0.025em;
+            text-align: center;
+        }
+
+        .text-13 {
+            margin: 23px 0 0;
+            position: relative;
+            z-index: 26;
+            font-size: 3.436842rem;
+            /* 54.99px / 16px = 3.436875rem */
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .payment {
+            margin: -12px 0 0;
+            position: relative;
+            z-index: 16;
+            font-size: 2.787814rem;
+            /* 44.61px / 16px = 2.788125rem */
+            letter-spacing: -0.075em;
+            text-align: center;
+        }
+
+        .text-14 {
+            margin: -23px 0 0;
+            position: relative;
+            z-index: 27;
+            font-size: 3.436842rem;
+            /* 54.99px / 16px = 3.436875rem */
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .row-2 {
+            margin: -3px 0 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 14;
+        }
+
+        .text-15 {
+            float: left;
+            margin: 0 180px 0 0;
+            width: 422px;
+            font-size: 2.657756rem;
+            /* 42.52px / 16px = 2.6575rem */
+            letter-spacing: -0.08em;
+        }
+
+        .text-16 {
+            float: left;
+            margin: 8px 0 0;
+            width: 187px;
+            font-size: 2.519401rem;
+            /* 40.31px / 16px = 2.519375rem */
+            letter-spacing: -0.075em;
+        }
+
+        .text-17 {
+            margin: -21px 0 0;
+            position: relative;
+            z-index: 28;
+            font-size: 3.436842rem;
+            /* 54.99px / 16px = 3.436875rem */
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .nav {
+            margin: 3px auto 0;
+            overflow: hidden;
+            position: relative;
+            width: 791px;
+            z-index: 18;
+        }
+
+        .nav-list {
+            position: relative;
+            list-style: none;
+        }
+
+        .nav-list li {
+            float: left;
+            margin: 0 112.5px 0 0;
+        }
+
+        .nav-list li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-item-1 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .nav-item-1-2 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .nav-item-1-3 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .text-18 {
+            margin: -18px 0 0;
+            position: relative;
+            z-index: 29;
+            font-size: 3.436842rem;
+            /* 54.99px / 16px = 3.436875rem */
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .nav-2 {
+            margin: -5px auto 0;
+            position: relative;
+            width: 792px;
+            z-index: 19;
+        }
+
+        .nav-list-2 {
+            position: relative;
+            list-style: none;
+        }
+
+        .nav-list-2 li {
+            float: left;
+            margin: 0 112.666664px 0 0;
+        }
+
+        .nav-list-2 li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-item-1-4 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .nav-item-1-5 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .nav-item-1-6 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .nav-item-1-7 {
+            font-size: 2.615201rem;
+            /* 41.84px / 16px = 2.615rem */
+            letter-spacing: -0.08em;
+        }
+
+        .text-19 {
+            margin: 75px 0 0;
+            position: relative;
+            z-index: 8;
+            font-size: 2.559234rem;
+            /* 40.95px / 16px = 2.559375rem */
+            letter-spacing: -0.075em;
+            line-height: 39.32px;
+            text-align: center;
+        }
+
+        .text-20 {
+            margin: 16px 0 0;
+            position: relative;
+            z-index: 9;
+            font-size: 2.559234rem;
+            /* 40.95px / 16px = 2.559375rem */
+            letter-spacing: -0.075em;
+            line-height: 39.32px;
+            text-align: center;
+        }
+
+        .text-21 {
+            margin: 3px 0 0;
+            position: relative;
+            z-index: 10;
+            font-size: 2.559234rem;
+            /* 40.95px / 16px = 2.559375rem */
+            letter-spacing: -0.075em;
+        }
+
+        .text-22 {
+            margin: 25px 0 0;
+            position: relative;
+            width: 699px;
+            z-index: 11;
+            line-height: 32.96477px;
+        }
+
+        .text-23 {
+            margin: 34px 0 0;
+            position: relative;
+            width: 761px;
+            z-index: 12;
+            font-size: 2.602111rem;
+            /* 41.63px / 16px = 2.601875rem */
+            line-height: 37.28856px;
+        }
+
+        .text-style {
+            letter-spacing: -0.005em;
+        }
+
+        .text-style-2 {
+            letter-spacing: -0.07em;
+        }
+    </style>
+
+    <base href="https://receiptly.cc/static/receipts/goyard/">
+    <title>Your site's title should be here</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Your site's description should be here">
+    <meta name="keywords" content="Your site's keywords should be here">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/goyard/style.css">
+    <!--[if IE 6]>
+        <style type="text/css">
+            * html .group {
+                height: 1%;
+            }
+        </style>
+      <![endif]-->
+    <!--[if IE 7]>
+        <style type="text/css">
+            *:first-child+html .group {
+                min-height: 1px;
+            }
+        </style>
+      <![endif]-->
+    <!--[if lt IE 9]> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> 
+      <![endif]-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Arvo:regular,italic,700,700italic&amp;subset=latin">
+</head>
+
+<body class="">
+    <div class="global_container_">
+        <div class="l-constrained">
+            <header class="header"></header>
+            <p class="text">{{STORE_NAME}}<br>{{STORE_ADDRESS}}<br>{{STORE_CITY}}</p>
+            <p class="text-2">Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cashie
+                &nbsp;&nbsp;&nbsp;&nbsp;S.pers<br>{{ORDER_NUMBER}}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{DATE}}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{TIME}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UK1
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UK1C1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AEL</p>
+            <p class="text-3">Customer: {{CUSTOMER_ID}}<br>{{CUSTOMER_NAME}}</p>
+            <p class="text-4">-----------------------------------</p>
+            <div class="row-3 group">
+                <p class="description">Description</p>
+                <p class="text-5">Tax incl<span class="text-style">. &nbsp;am</span></p>
+                <p class="text-6">-----------------------------------</p>
+                <div class="row-4 group">
+                    <p class="text-7">{{PRODUCT_QUANTITY}}x {{PRODUCT_NAME}}</p>
+                    <p class="text-8">{{PRODUCT_PRICE}}</p>
+                </div>
+                <p class="belve3pmty29cg29p">BELVE3PMTY29CG29P</p>
+                <div class="row group">
+                    <img class="text-9" src="/static/receipts/goyard/images/image.png" alt="****" width="211"
+                        height="51" title="****">
+                    <p class="text-10">{{CURRENCY}}{{PRODUCT_PRICE}}</p>
+                    <img class="text-11" src="/static/receipts/goyard/images/image.png" alt="****" width="211"
+                        height="51" title="****">
+                </div>
+                <p class="text-12">{{PRODUCT_QUANTITY}} &nbsp;item</p>
+                <p class="text-13">-----------------------------------</p>
+                <p class="payment">Payment</p>
+                <p class="text-14">-----------------------------------</p>
+                <div class="row-2 group">
+                    <p class="text-15">American Express GBP</p>
+                    <p class="text-16">{{PRODUCT_PRICE}} &nbsp;&nbsp;<span class="text-style-2">{{CURRENCY}}</span>
+                    </p>
+                    <p class="text-17">-----------------------------------</p>
+                    <nav class="nav">
+                        <ul class="nav-list group">
+                            <li>
+                                <p class="nav-item-1-3"><a href="#"> Tax &lrm; &lrm;&lrm; &lrm; &lrm; Amount &lrm;
+                                        &lrm;&lrm; &lrm; &lrm; &lrm; Rate &nbsp;Based &nbsp;amount</a>
+                                </p>
+                                <p class="text-18">-----------------------------------</p>
+                                <nav class="nav-2">
+                                    <ul class="nav-list-2 group">
+                                        <li>
+                                            <p class="nav-item-1-4"><a href="#">{{TAX_LABEL}}</a></p>
+                                        </li>
+                                        <li>
+                                            <p class="nav-item-1-5"><a href="#">{{TAX_AMOUNT}}</a></p>
+                                        </li>
+                                        <li>
+                                            <p class="nav-item-1-6"><a href="#">20.00%</a></p>
+                                        </li>
+                                        <li>
+                                            <p class="nav-item-1-7"><a href="#">2,940.00</a></p>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <p class="text-19">&nbsp;{{STORE_ADDRESS}} ,&nbsp;{{STORE_CITY}}<br>VAT Number : 973
+                                    5481
+                                    85</p>
+                                <p class="text-20">you &nbsp;have &nbsp;been &nbsp;assisted
+                                    &nbsp;by<br>{{SALES_ASSOCIATE}}</p>
+                                <p class="text-21">Refund accepted only on the purchase day</p>
+                                <p class="text-22">Item refunded unworn and in the original packaging including
+                                    protecions can be exchanged, or be the subject of credit, within thirty (30) days
+                                    from the date of purchase, upon presentation in person of the purchase ticket. Store
+                                    credit may only be used at the location that issued it and expires after six (6)
+                                    months. No refund shall be made.<br>Exchange policy does no apply to personalized
+                                    items, special orders and exotic leather items.<br>Exchanges are subject to the
+                                    approval of the boutique managment team.</p>
+                                <p class="text-23">Please keep this purchase ticket for our after-sales service. Please
+                                    understand tat we will not be able to perform &nbsp;after-sales service for any item
+                                    that is processed or repaired by any unoficial workshop. For any enquiry regarding
+                                    our after-sales servcice, please contact our Goyard boutiques.
+                                </p>
+                                <div style="height: 100px;">
+                                </div>
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- FORM: -->
+<!-- Products
+{{PRODUCT_NAME}}
+Price
+{{PRODUCT_PRICE}}
+Tax
+{{TAX_AMOUNT}}
+Date
+{{DATE}}
+Order Number
+{{ORDER_NUMBER}}
+Store Name
+{{STORE_NAME}}
+Store Address
+{{STORE_ADDRESS}}
+Store City
+{{STORE_CITY}}
+Store Phone
+{{STORE_PHONE}}
+Transaction Number
+{{TRANSACTION_NUMBER}}
+Sales Associate
+{{SALES_ASSOCIATE}}
+Customer Name
+{{CUSTOMER_NAME}}
+Product Reference
+{{PRODUCT_REFERENCE}}
+Product Color
+{{PRODUCT_COLOR}}
+Card Last 4
+{{CARD_LAST4}} -->

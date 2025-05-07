@@ -1,0 +1,101 @@
+
+
+.save-button{
+    width: 100px;
+    height: 50px;
+}
+
+
+#receipt {
+    width: 600px;
+    z-index: -20;
+    margin: 10px;
+    position: relative;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    max-width: 660px;
+    min-width: 300px;
+    overflow: auto;
+    margin: 0 auto;
+    height: 800px;
+}
+
+.save-button{
+    width: 100px;
+    height: 50px;
+}
+
+@font-face {
+    font-family: 'AscenderUniW01Duo' !important;
+    src: url("balenciaga/static/fonts/yuditjb.ttf") format('truetype') !important;
+  }
+  body {
+    font-family: 'AscenderUniW01Duo', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .balenciaga-top-part {
+    font-size: 35px;
+    font-weight: normal;
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .balenciaga-top-part div {
+    height: 37px;
+    text-align: center;
+    padding-top: 0;
+  }
+
+  #receipt3 {
+    height: 1750px;
+  }
+
+  td.label {
+     text-align: left;
+  }
+
+  td.value {
+     text-align: right;
+  }
+
+  .separator {
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .flex-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .product-info {
+    display: flex;
+    padding-top: 53px;
+    width: 600px;
+    justify-content: space-between;
+  }
+
+  .vat-section {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
+  .product-line {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Remove the black outline when clicking */
+  [contenteditable="true"]:focus {
+    outline: none;
+  }

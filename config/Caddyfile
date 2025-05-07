@@ -1,0 +1,22 @@
+onereceiptdiscord.com {
+    encode gzip
+
+    @nextjs path /app*
+    handle @nextjs {
+        reverse_proxy localhost:3000
+    }
+
+    handle {
+        reverse_proxy https://exuberant-costs-069822.framer.app {
+            header_up Host {http.reverse_proxy.upstream.hostport}
+            header_up X-Forwarded-Host {http.request.host}
+            header_up X-Forwarded-For {http.request.remote.addr}
+            header_up X-Forwarded-Proto {http.request.scheme}
+        }
+    }
+
+    log {
+        output file /var/log/caddy/access.log
+        format json
+    }
+}

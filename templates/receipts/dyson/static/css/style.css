@@ -1,0 +1,30 @@
+
+
+.save-button{
+    width: 100px;
+    height: 50px;
+}
+
+
+#receipt {
+    width: 600px;
+    z-index: -20;
+    margin: 10px;
+    position: relative;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    max-width: 660px;
+    min-width: 300px;
+    overflow: auto;
+    margin: 0 auto;
+    height: 800px;
+}
+
+.save-button{
+    width: 100px;
+    height: 50px;
+}

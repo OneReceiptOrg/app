@@ -1,0 +1,164 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Paper Receipt Maker</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://receiptly.cc/static/receipts/gucci/gucci/static/css/style.css">
+    <style>
+        @font-face {
+            font-family: 'AscenderUniW01Duo';
+            src: url('https://receiptly.cc/static/receipts/gucci/gucci/static/fonts/yuditjb.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AscenderUniW01Duo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .gucci-top-part {
+            font-size: 33px;
+            font-weight: normal;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .gucci-top-part div {
+            height: 37px;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #receipt3 {
+            height: 1450px;
+        }
+
+        td.label {
+            text-align: left;
+        }
+
+        td.value {
+            text-align: right;
+        }
+
+        .separator {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .product-info {
+            display: flex;
+            padding-top: 53px;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        .vat-section {
+            width: 550px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .product-line {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Remove the black outline when clicking */
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+
+        /* Ensure images span the full width */
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="receipt3" class="gucci-top-part" contenteditable="true">
+        <div style="height: 44px; padding-top: 100px;" contenteditable="false">
+            <img src="https://receiptly.cc/static/receipts/gucci/gucci/static/images/brand_icons/gucci.png"
+                style="height: 200%;">
+        </div>
+        <div style="padding-top: 35px; height: 429px; text-align: left;">
+            <div style="line-height: 3">London Bond</div>
+            <div style="line-height: 2.2">34 Old Bond Street</div>
+            <div style="line-height: 1.5">34 Old Bond Street</div>
+            <div style="line-height: 0.7">London W1S 4QL</div>
+            <div style="line-height: 0">tel +44 207 62 92 716 fax +44 2074930058</div>
+            <hr style="border: 1px solid grey; width: 100%; margin: 0; padding: 0;">
+            <div>
+                <div style="display: flex; align-items: center;">
+                    <div style="margin-right: 10px;">Trans #: 8591</div>
+                    <div style="margin-left: 120px;">Date: 10/5/19 14:48:35</div>
+                </div>
+                <div style="display: flex; align-items: center; line-height: 0.2">
+                    <div style="margin-right: 10px;">Store: 20201</div>
+                    <div style="margin-left: 127px;">Register: 1</div>
+                </div>
+                <div style="text-align: left; margin-top: -23px;">Cashier: ASeniono</div>
+                <div style="text-align: left; margin-top: -12px;">Customer: MATTHEW MILES</div>
+                <div style="text-align: left; margin-top: -12px;">Customer ID: 20201003673200</div>
+            </div>
+        </div>
+        <div style="text-align: left; margin-top: -85px;">ITEM QTY. PRICE AMOUNT GBP</div>
+        <hr style="border: 1px solid grey; width: 100%; margin: 0; padding: 0; margin-top: 10px;">
+        <div style="text-align: left; margin-top: -1px; font-weight: 30px;">182451M21 1 440.40 440.00</div>
+        <div style="text-align: left; margin-top: -12px;">MEN T-SHIRT 182451M21</div>
+        <div style="text-align: left; margin-top: -12px;">Salesperson: ASeniono (Agnija)</div>
+        <div style="height: 100px;"></div>
+        <div style="display: flex; align-items: center; line-height: 0;">
+            <span style="margin-right: 10px;"> Subtotal</span>
+            <span style="margin-left: 110px;">440.00</span>
+        </div>
+        <div style="display: flex; align-items: center; line-height: 0; margin-top: -13px;">
+            <span style="margin-right: 10px;"> Tax</span>
+            <span style="margin-left: 120px;">88.00</span>
+        </div>
+        <div style="height: 15px;"></div>
+        <hr style="border: 1px solid grey; width: 100%; margin: 0; padding: 0; margin-top: 10px;">
+        <div style="display: flex; align-items: center; line-height: 0; margin-top: -1px;">
+            <span style="margin-right: 10px;"> Total(GBP)</span>
+            <span style="margin-left: 100px;">440.00</span>
+        </div>
+        <hr style="border: 1px solid grey; width: 100%; margin: 0; padding: 0; margin-top: 10px;">
+        <div style="display: flex; align-items: center; line-height: 0; margin-top: -1px;">
+            <span style="margin-right: 10px;">Visa</span>
+            <span style="margin-left: 497px;">440.00</span>
+        </div>
+        <hr style="border: 1px solid grey; width: 100%; margin: 0; padding: 0; margin-top: 10px;">
+        <div style="display: flex; align-items: center; line-height: 0; margin-top: -1px;">
+            <span style="margin-right: 10px;">Change</span>
+            <span style="margin-left: 490px;">0.00</span>
+        </div>
+        <div style="height: 20px;"></div>
+        <span style="margin-right: 10px;">SOLD ITEM COUNT = 1</span>
+        <div style="height: 20px;"></div>
+        <span style="margin-right: 10px;">Sales Tax Analysis</span>
+        <div style="text-align: left;">Code Taxable Rate Total Tax</div>
+        <div style="text-align: left;">Local 440.00 20% 440.00 440.00</div>
+        <div style="text-align: center;">
+            <div style="height: 50px;"></div>
+            <img src="https://receiptly.cc/static/receipts/gucci/gucci/static/images/brand_icons/ending.png"
+                alt="Image">
+        </div>
+    </div>
+
+</body>
+
+</html>
